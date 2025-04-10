@@ -36,12 +36,12 @@ class Product:
             Product: Instância de Product
         """
         return cls(
-            name=data.get('nome', ''),
-            price=float(data.get('preço', 0.0)),
-            rating=float(data.get('avaliação', 0.0)) if data.get('avaliação') else None,
+            name=data.get('titulo', ''),
+            price=float(data.get('preco', 0.0)),
+            rating=float(data.get('rating', 0.0)) if data.get('rating') else None,
             image_url=data.get('imagem', None),
-            url=data.get('url', None),
-            description=data.get('descrição', None)
+            url=data.get('url_produto', None),
+            description=data.get('descricao', None)
         )
 
 @dataclass

@@ -1,30 +1,38 @@
-# DCortexAugment
+# DCortex Amazon Dashboard
 
-Um dashboard para análise de produtos da Amazon, utilizando web scraping e processamento de dados para extrair informações sobre produtos eletrônicos em promoção.
+Dashboard para análise de produtos da Amazon, utilizando web scraping e processamento de dados com múltiplos agentes.
+
+## Visão Geral
+
+O DCortex Amazon Dashboard é uma aplicação web que coleta, processa e visualiza dados de produtos da Amazon. A aplicação utiliza uma arquitetura de múltiplos agentes para coletar e processar os dados, permitindo uma análise detalhada dos produtos.
+
+## Funcionalidades
+
+- **Coleta de Dados**: Coleta dados de produtos da Amazon usando web scraping
+- **Processamento de Dados**: Processa e analisa os dados coletados
+- **Visualização de Dados**: Apresenta os dados em um dashboard interativo
+- **Tema Claro/Escuro**: Suporte para alternar entre temas claro e escuro
+- **Design Responsivo**: Interface adaptável para diferentes tamanhos de tela
 
 ## Estrutura do Projeto
 
-O projeto foi reorganizado seguindo os princípios de Clean Code e SOLID, com suporte para múltiplos agentes:
+O projeto foi organizado seguindo os princípios de Clean Code e SOLID, com uma arquitetura modular e componentizada:
 
 ```
-DCortexAugment/
-├── src/                    # Código fonte principal
-│   ├── api/                # Rotas e endpoints da API
-│   ├── config/             # Configurações da aplicação
-│   ├── models/             # Modelos de dados
-│   ├── services/           # Serviços e lógica de negócios
-│   │   └── agents/         # Agentes para processamento de dados
-│   │       ├── langflow/    # Implementação de agentes Langflow
-│   │       ├── base.py      # Classes base para agentes
-│   │       ├── interfaces.py # Interfaces para agentes
-│   │       └── registry.py   # Registro e fábrica de agentes
-│   ├── static/             # Arquivos estáticos (CSS, JS, imagens)
-│   ├── templates/          # Templates HTML
-│   └── utils/              # Utilitários e funções auxiliares
-├── tests/                  # Testes automatizados
-├── .env                    # Variáveis de ambiente
-├── main.py                 # Ponto de entrada da aplicação
-└── requirements.txt        # Dependências do projeto
+src/
+├── api/                # Rotas da API Flask
+├── config/             # Configurações da aplicação
+├── models/             # Modelos de dados
+├── services/           # Serviços e agentes
+│   ├── agents/         # Implementação dos agentes
+│   └── interfaces/     # Interfaces para os agentes
+├── static/             # Arquivos estáticos
+│   ├── css/            # Estilos CSS
+│   ├── js/             # Scripts JavaScript
+│   └── components/     # Componentes estáticos
+├── templates/          # Templates HTML
+│   └── components/     # Componentes HTML
+└── utils/              # Utilitários
 ```
 
 ## Princípios SOLID Aplicados
@@ -77,9 +85,20 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
 
 ## Execução
 
-1. Inicie o Langflow: `uv run langflow run`
-2. Em outro terminal, execute a aplicação: `python main.py`
-3. Acesse o dashboard em: http://127.0.0.1:5000
+1. Inicie o Langflow (necessário para o processamento de dados):
+   ```
+   uv run langflow run
+   ```
+
+2. Em outro terminal, inicie a aplicação Flask:
+   ```
+   python main.py
+   ```
+
+3. Acesse a aplicação em seu navegador:
+   ```
+   http://localhost:5000
+   ```
 
 ### API Endpoints
 

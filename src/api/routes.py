@@ -23,6 +23,19 @@ def index():
     """
     return render_template('index.html', loading=True)
 
+@api_bp.route('/components/<component_name>')
+def get_component(component_name):
+    """
+    Rota para obter componentes HTML.
+
+    Args:
+        component_name (str): Nome do componente a ser renderizado
+
+    Returns:
+        str: Template do componente renderizado
+    """
+    return render_template(f'components/{component_name}.html')
+
 @api_bp.route('/fetch-data')
 def fetch_data():
     """
@@ -54,19 +67,26 @@ def fetch_data():
                 "error": "Erro ao obter ou processar dados"
             })
 
-        # Converte para dicionários para serialização JSON
-        produtos_dict = []
-        for produto in produtos:
-            # Garante que todos os campos necessários estão presentes
-            produto_dict = {
-                "name": produto.name,
-                "price": float(produto.price) if produto.price is not None else 0.0,
-                "rating": float(produto.rating) if produto.rating is not None else 0.0,
-                "image_url": produto.image_url or "",
-                "url": produto.url or "",
-                "description": produto.description or ""
-            }
-            produtos_dict.append(produto_dict)
+        # Verifica se os produtos já estão no formato do agente
+        if isinstance(produtos, list) and len(produtos) > 0 and isinstance(produtos[0], dict):
+            # Já está no formato de dicionário (provavelmente do agente)
+            logger.info("Produtos já estão no formato de dicionário")
+            produtos_dict = produtos
+        else:
+            # Converte para dicionários para serialização JSON
+            logger.info("Convertendo produtos para o formato de dicionário")
+            produtos_dict = []
+            for produto in produtos:
+                # Garante que todos os campos necessários estão presentes
+                produto_dict = {
+                    "name": produto.name,
+                    "price": float(produto.price) if produto.price is not None else 0.0,
+                    "rating": float(produto.rating) if produto.rating is not None else 0.0,
+                    "image_url": produto.image_url or "",
+                    "url": produto.url or "",
+                    "description": produto.description or ""
+                }
+                produtos_dict.append(produto_dict)
 
         # Prepara os dados para o gráfico
         dados_grafico = prepare_chart_data(produtos)
