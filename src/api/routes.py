@@ -48,7 +48,26 @@ def fetch_data():
         # Obtém parâmetros opcionais da requisição
         fetcher_type = request.args.get('fetcher')
         processor_type = request.args.get('processor')
-        source = request.args.get('source', active_config.DEFAULT_SCRAPE_URL)
+
+        # Obtém a URL de origem
+        source = request.args.get('source')
+
+        # Log para depuração
+        logger.info(f"Parâmetros da requisição: {request.args}")
+        logger.info(f"URL recebida na requisição: {source}")
+
+        # Se a URL não foi fornecida, usa a URL padrão
+        if not source:
+            source = active_config.DEFAULT_SCRAPE_URL
+            logger.info(f"Usando URL padrão: {source}")
+
+        # Verifica se a URL é válida
+        if not isinstance(source, str) or not source.startswith('http'):
+            logger.error(f"URL inválida: {source}")
+            return jsonify({
+                "success": False,
+                "error": f"URL inválida: {source}"
+            })
 
         # Inicializa o orquestrador de agentes
         orchestrator = AgentOrchestrator()

@@ -10,6 +10,9 @@ let progress = 0;
 let currentTheme = localStorage.getItem('theme') || 'light';
 let progressBar, loadingStatus, mainContent, loadingOverlay, errorMessage, errorText, productCount;
 
+// Variável para armazenar a instância do gráfico
+let chartInstance = null;
+
 // Inicialização quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
     // Inicializa as referências aos elementos do DOM
@@ -21,9 +24,84 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adiciona listener para mudança de tema
     document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
 
-    // Inicia a busca de dados
+    // Configura os links de categoria no sidebar
+    setupCategoryLinks();
+
+    // Inicia a busca de dados com a URL padrão
     fetchData();
 });
+
+/**
+ * Configura os listeners para os links de categoria no sidebar
+ */
+function setupCategoryLinks() {
+    // Seleciona todos os links de categoria
+    const categoryLinks = document.querySelectorAll('.category-link');
+
+    // Adiciona listener para cada link
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Obtém a URL do atributo data-url
+            const url = this.getAttribute('data-url');
+            console.log('Link de categoria clicado:', url);
+
+            // Atualiza o link "Abrir na Amazon"
+            updateAmazonLink(url, this.textContent.trim());
+
+            // Verifica se a URL é válida
+            if (url && url.startsWith('http')) {
+                // Destaca o link selecionado
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Busca os dados com a URL selecionada
+                fetchData(url);
+            } else {
+                console.error('URL inválida no link de categoria:', url);
+                showError('URL inválida. Por favor, selecione outra categoria.');
+            }
+        });
+    });
+
+    // Define o primeiro link como ativo por padrão
+    if (categoryLinks.length > 0) {
+        categoryLinks[0].classList.add('active');
+
+        // Atualiza o link "Abrir na Amazon" com a URL do primeiro link
+        updateAmazonLink(
+            categoryLinks[0].getAttribute('data-url'),
+            categoryLinks[0].textContent.trim()
+        );
+    }
+}
+
+/**
+ * Atualiza o link "Abrir na Amazon" com a URL e o texto fornecidos
+ * @param {string} url - URL para o link
+ * @param {string} [text] - Texto opcional para o link
+ */
+function updateAmazonLink(url, text) {
+    const openAmazonLink = document.getElementById('open-amazon-link');
+    if (!openAmazonLink) return;
+
+    // Atualiza a URL
+    openAmazonLink.href = url;
+
+    // Atualiza o texto, se fornecido
+    if (text) {
+        // Extrai apenas o nome da categoria (remove os ícones)
+        const categoryName = text.replace(/[^a-zA-Z0-9À-ÿ\s]/g, '').trim();
+        openAmazonLink.innerHTML = `<i class="bi bi-box-arrow-up-right me-2"></i>Abrir ${categoryName} na Amazon`;
+    }
+
+    // Adiciona uma animação para destacar a mudança
+    openAmazonLink.classList.add('pulse');
+    setTimeout(() => {
+        openAmazonLink.classList.remove('pulse');
+    }, 1000);
+}
 
 /**
  * Inicializa as referências aos elementos do DOM
@@ -282,7 +360,15 @@ function renderChart(dados) {
         ['rgba(67, 97, 238, 0.8)', 'rgba(58, 12, 163, 0.8)'];
 
     // Configuração do gráfico
-    const ctx = document.getElementById('precoChart').getContext('2d');
+    const canvas = document.getElementById('precoChart');
+    const ctx = canvas.getContext('2d');
+
+    // Destrói o gráfico existente, se houver
+    if (chartInstance) {
+        console.log('Destruindo gráfico existente antes de criar um novo');
+        chartInstance.destroy();
+        chartInstance = null;
+    }
 
     // Cria um gradiente
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
@@ -292,7 +378,8 @@ function renderChart(dados) {
     // Registra o plugin de datalabels
     Chart.register(ChartDataLabels);
 
-    new Chart(ctx, {
+    // Cria um novo gráfico e armazena a instância
+    chartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
@@ -387,9 +474,10 @@ function renderChart(dados) {
 
 /**
  * Busca os dados da API
+ * @param {string} [customUrl] - URL personalizada para buscar dados
  * @returns {Promise<void>}
  */
-async function fetchData() {
+async function fetchData(customUrl) {
     // Reset UI
     resetUI();
 
@@ -397,8 +485,8 @@ async function fetchData() {
     const progressInterval = setInterval(updateProgress, 1000);
 
     try {
-        // Busca os dados da API
-        const data = await fetchDataFromAPI();
+        // Busca os dados da API com a URL personalizada, se fornecida
+        const data = await fetchDataFromAPI(customUrl);
 
         if (data.success) {
             // Completa o progresso
@@ -409,6 +497,11 @@ async function fetchData() {
 
             // Mostra o conteúdo com animação
             showContent(progressInterval);
+
+            // Atualiza o título da página com a categoria selecionada
+            if (customUrl) {
+                updatePageTitle(customUrl);
+            }
         } else {
             throw new Error(data.error || 'Erro ao carregar dados');
         }
@@ -429,20 +522,68 @@ function resetUI() {
     loadingOverlay.style.opacity = '1';
     mainContent.style.display = 'none';
     errorMessage.style.display = 'none';
+
+    // Destrói o gráfico existente, se houver
+    if (chartInstance) {
+        console.log('Destruindo gráfico existente durante resetUI');
+        chartInstance.destroy();
+        chartInstance = null;
+    }
 }
 
 /**
  * Busca os dados da API
+ * @param {string} [customUrl] - URL personalizada para buscar dados
  * @returns {Promise<Object>} Dados da API
  */
-async function fetchDataFromAPI() {
+async function fetchDataFromAPI(customUrl) {
     console.log('Iniciando busca de dados...');
-    const response = await fetch('/fetch-data');
-    console.log('Resposta recebida:', response.status);
 
-    const data = await response.json();
-    console.log('Dados recebidos:', data);
-    return data;
+    // Constrói a URL da API com o parâmetro source, se fornecido
+    let apiUrl = '/fetch-data';
+    if (customUrl) {
+        // Garante que a URL seja válida
+        if (!customUrl.startsWith('http')) {
+            console.error('URL inválida:', customUrl);
+            throw new Error('URL inválida. A URL deve começar com http:// ou https://');
+        }
+
+        apiUrl += `?source=${encodeURIComponent(customUrl)}`;
+        console.log(`Buscando dados da URL personalizada: ${customUrl}`);
+        console.log(`URL codificada: ${apiUrl}`);
+    } else {
+        console.log('Usando URL padrão (nenhuma URL personalizada fornecida)');
+    }
+
+    // Adiciona um timestamp para evitar cache
+    apiUrl += apiUrl.includes('?') ? '&' : '?';
+    apiUrl += `_t=${Date.now()}`;
+
+    console.log(`URL final da API: ${apiUrl}`);
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            },
+            cache: 'no-store'
+        });
+
+        console.log('Resposta recebida:', response.status);
+
+        if (!response.ok) {
+            throw new Error(`Erro na resposta da API: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log('Dados recebidos:', data);
+        return data;
+    } catch (error) {
+        console.error('Erro ao buscar dados da API:', error);
+        throw error;
+    }
 }
 
 /**
@@ -572,4 +713,48 @@ function toggleSidebar() {
     } else {
         menuToggle.innerHTML = '<i class="bi bi-list" style="font-size: 1.5rem;"></i>';
     }
+}
+
+/**
+ * Atualiza o título da página com base na URL selecionada
+ * @param {string} url - URL selecionada
+ */
+function updatePageTitle(url) {
+    if (!url) return;
+
+    // Obtém o elemento do título da página
+    const pageTitle = document.querySelector('h1.page-title');
+    if (!pageTitle) return;
+
+    // Tenta encontrar o link de categoria correspondente à URL
+    const categoryLinks = document.querySelectorAll('.category-link');
+    let categoryName = '';
+
+    for (const link of categoryLinks) {
+        if (link.getAttribute('data-url') === url) {
+            categoryName = link.textContent.trim();
+            break;
+        }
+    }
+
+    // Se não encontrou o nome da categoria, extrai da URL
+    if (!categoryName) {
+        try {
+            // Tenta extrair o nome da categoria da URL
+            const urlObj = new URL(url);
+            const pathParts = urlObj.pathname.split('/');
+            categoryName = pathParts.filter(part => part.length > 0).pop() || 'Produtos';
+            categoryName = categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
+        } catch (e) {
+            categoryName = 'Produtos';
+        }
+    }
+
+    // Atualiza o título da página
+    pageTitle.textContent = `${categoryName} - Amazon`;
+
+    // Adiciona a classe de animação para destacar a mudança
+    pageTitle.classList.remove('fade-in');
+    void pageTitle.offsetWidth; // Força um reflow para reiniciar a animação
+    pageTitle.classList.add('fade-in');
 }

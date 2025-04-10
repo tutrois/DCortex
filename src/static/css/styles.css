@@ -386,6 +386,8 @@ h1.page-title:after {
     overflow-y: auto;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-header {
@@ -409,32 +411,148 @@ h1.page-title:after {
 
 .sidebar-content {
     padding: 1.5rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Dropdown */
 .dropdown-menu {
     width: 100%;
-    border: none;
-    box-shadow: var(--card-shadow);
-    padding: 0.8rem;
-    border-radius: 12px;
-    background: var(--card-bg);
     border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: var(--card-bg);
+    max-height: 450px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    margin-top: 0.5rem;
+}
+
+/* Estilização da barra de rolagem */
+.dropdown-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: rgba(var(--bs-primary-rgb), 0.3);
+    border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--bs-primary-rgb), 0.5);
 }
 
 .dropdown-item {
-    padding: 0.9rem 1.2rem;
+    padding: 0.6rem 0.8rem;
     color: var(--text-color);
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    margin-bottom: 4px;
-    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-item:hover {
-    background: var(--light-bg);
-    transform: translateX(5px);
+    background: rgba(var(--bs-primary-rgb), 0.05);
     color: var(--primary-color);
+}
+
+/* Link de categoria ativo */
+.dropdown-item.active {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.dropdown-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 70%;
+    width: 3px;
+    background-color: var(--primary-color);
+    border-radius: 0 2px 2px 0;
+    transform: translateY(-50%);
+}
+
+/* Botão para abrir na Amazon */
+#open-amazon-link {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#open-amazon-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(var(--bs-primary-rgb), 0.4);
+}
+
+#open-amazon-link:active {
+    transform: translateY(1px);
+}
+
+#open-amazon-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+#open-amazon-link:hover::after {
+    transform: translateX(0);
+}
+
+/* Animação de pulso para o botão */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(var(--bs-primary-rgb), 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+    }
+}
+
+#open-amazon-link.pulse {
+    animation: pulse 1s ease-in-out;
 }
 
 .dropdown-toggle {
@@ -444,6 +562,31 @@ h1.page-title:after {
     border-radius: 12px;
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão de categorias */
+.categories-btn {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(var(--bs-primary-rgb), 0.2);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-btn:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+    color: white;
+}
+
+.categories-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(var(--bs-primary-rgb), 0.2);
 }
 
 /* Botões de controle */

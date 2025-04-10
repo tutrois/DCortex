@@ -76,22 +76,71 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
 ## Instalação
 
 1. Clone o repositório
-2. Crie um ambiente virtual: `python -m venv venv`
+   ```bash
+   git clone https://github.com/seu-usuario/DCortexAugment.git
+   cd DCortexAugment
+   ```
+
+2. Crie um ambiente virtual:
+   ```bash
+   python -m venv venv
+   ```
+
 3. Ative o ambiente virtual:
-   - Windows: `venv\Scripts\activate`
-   - Linux/Mac: `source venv/bin/activate`
-4. Instale as dependências: `pip install -r requirements.txt`
-5. Configure as variáveis de ambiente no arquivo `.env`
+   - Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - Linux/Mac:
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. Configure as variáveis de ambiente no arquivo `.env`:
+   ```
+   FLASK_ENV=development
+   SECRET_KEY=sua-chave-secreta
+   LANGFLOW_API_URL=http://localhost:7860/api/v1/run/
+   OPENAI_API_KEY=sua-chave-api-openai
+   DEFAULT_SCRAPE_URL=https://www.amazon.com.br/gp/bestsellers/?ref_=nav_cs_bestsellers
+   ```
+
+## Configuração do Langflow e do Bot
+
+1. Inicie o Langflow:
+   ```bash
+   langflow run
+   ```
+   O Langflow estará disponível em `http://localhost:7860`
+
+2. Importe o fluxo do bot ColetorDadosAmazon:
+   - Acesse a interface do Langflow no navegador
+   - Clique em "Import"
+   - Selecione o arquivo `flows/coletor_dados_amazon.json` do repositório
+   - Após importar, clique em "Edit" no fluxo
+   - Verifique se todos os componentes estão configurados corretamente
+   - Clique em "Build" para construir o fluxo
+   - Clique em "Deploy" para implantar o fluxo
+
+3. Copie a URL da API do fluxo implantado:
+   - Após implantar, clique em "API Reference"
+   - Copie a URL completa da API (algo como `http://localhost:7860/api/v1/run/98bc1dc9-3bb8-4941-ad26-3e26e775c31b`)
+   - Atualize a variável `LANGFLOW_API_URL` no arquivo `.env` com esta URL
 
 ## Execução
 
-1. Inicie o Langflow (necessário para o processamento de dados):
-   ```
-   uv run langflow run
+1. Certifique-se de que o Langflow está em execução em um terminal:
+   ```bash
+   langflow run
    ```
 
 2. Em outro terminal, inicie a aplicação Flask:
-   ```
+   ```bash
    python main.py
    ```
 
@@ -99,6 +148,24 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
    ```
    http://localhost:5000
    ```
+
+## Estrutura do Fluxo do Bot
+
+O fluxo do bot ColetorDadosAmazon consiste em:
+
+1. **TextInputComponent**: Recebe a URL da Amazon com o prefixo `https://r.jina.ai/`
+2. **WebScraper**: Extrai dados da página da Amazon
+3. **PromptTemplate**: Formata os dados para processamento
+4. **LLMChain**: Processa os dados usando um modelo de linguagem
+5. **OutputParser**: Estrutura a saída em formato JSON
+
+O bot retorna um JSON com os seguintes campos para cada produto:
+- `posição`: Posição do produto na lista
+- `imagem`: URL da imagem do produto
+- `titulo`: Nome do produto
+- `preco`: Preço do produto
+- `rating`: Avaliação do produto
+- `url_produto`: URL do produto
 
 ### API Endpoints
 
