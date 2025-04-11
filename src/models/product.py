@@ -23,6 +23,7 @@ class Product:
     image_url: Optional[str] = None
     url: Optional[str] = None
     description: Optional[str] = None
+    classificacao: Optional[int] = None
     
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Product':
@@ -41,7 +42,8 @@ class Product:
             rating=float(data.get('rating', 0.0)) if data.get('rating') else None,
             image_url=data.get('imagem', None),
             url=data.get('url_produto', None),
-            description=data.get('descricao', None)
+            description=data.get('descricao', None),
+            classificacao=data.get('classificacao', 0)
         )
 
 @dataclass

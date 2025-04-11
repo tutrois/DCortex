@@ -103,7 +103,8 @@ def fetch_data():
                     "rating": float(produto.rating) if produto.rating is not None else 0.0,
                     "image_url": produto.image_url or "",
                     "url": produto.url or "",
-                    "description": produto.description or ""
+                    "description": produto.description or "",
+                    "classificacao": produto.classificacao or "",
                 }
                 produtos_dict.append(produto_dict)
 

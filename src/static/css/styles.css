@@ -122,6 +122,20 @@ body {
     gap: 4px;
 }
 
+.ranking-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(108, 117, 125, 0.8) !important;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .price {
     font-size: 1.5em;
     font-weight: 700;

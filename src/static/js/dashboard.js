@@ -276,6 +276,7 @@ function renderProducts(produtos) {
         const preco = produto.preco || produto.price || produto.preço || 0;
         const avaliacao = produto.rating || produto.avaliacao || produto.avaliação || 0;
         const posicao = produto.posição || produto.position || produto.posicao || index + 1;
+        const classificacao = produto.classificacao || null;
 
         // Gera estrelas baseadas na avaliação
         const starsHtml = generateStars(avaliacao);
@@ -295,6 +296,7 @@ function renderProducts(produtos) {
                     <div class="mt-auto">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <span class="rating">${starsHtml} ${avaliacao}</span>
+                            ${classificacao !== null ? `<span class="badge bg-secondary ranking-badge" data-bs-toggle="tooltip" data-bs-placement="top" title="Número de avaliações"><i class="bi bi-people-fill me-1"></i>${classificacao.toLocaleString()}</span>` : ''}
                         </div>
                         <span class="price">${formatPrice(preco)}</span>
                     </div>
@@ -303,6 +305,12 @@ function renderProducts(produtos) {
         </div>
         `;
     }).join('');
+
+    // Inicializa os tooltips do Bootstrap
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 }
 
 /**
