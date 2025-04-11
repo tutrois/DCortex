@@ -76,7 +76,7 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
   - **ColetorDadosAmazon - Busca**: Responsável por buscar dados brutos da Amazon
   - **ColetorDadosAmazon - Processamento**: Responsável por limpar os dados brutos obtidos
  
-  - - **Formatador de Dados Amazon**: Agentes especializado em formatar dados de produtos da Amazon
+- **Formatador de Dados Amazon**: Agentes especializado em formatar dados de produtos da Amazon
   - **FormatadorDadosAmazon - Formatação**: Responsável por formatar os dados limpos em um formato estruturado
 
 ## Instalação
