@@ -20,9 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Aplica o tema salvo
     applyTheme(currentTheme);
+    console.log('Tema inicial aplicado:', currentTheme);
 
     // Adiciona listener para mudança de tema
-    document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Botão de tema clicado');
+            toggleTheme();
+        });
+        console.log('Listener de tema adicionado');
+    } else {
+        console.error('Botão de tema não encontrado');
+    }
 
     // Configura os links de categoria no sidebar
     setupCategoryLinks();
@@ -121,17 +132,35 @@ function initDOMReferences() {
  * @param {string} theme - O tema a ser aplicado ('light' ou 'dark')
  */
 function applyTheme(theme) {
+    console.log('Aplicando tema:', theme);
     document.documentElement.setAttribute('data-bs-theme', theme);
+    document.body.setAttribute('data-bs-theme', theme); // Adiciona o atributo ao body também
     updateThemeIcon(theme);
+
+    // Adiciona ou remove a classe 'dark-theme' do body para estilos CSS adicionais
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
 }
 
 /**
  * Alterna entre os temas claro e escuro
  */
 function toggleTheme() {
+    console.log('Alternando tema. Tema atual:', currentTheme);
     currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    console.log('Novo tema:', currentTheme);
     applyTheme(currentTheme);
     localStorage.setItem('theme', currentTheme);
+
+    // Força a atualização dos gráficos se existirem
+    if (chartInstance) {
+        setTimeout(() => {
+            chartInstance.update();
+        }, 100);
+    }
 }
 
 /**
@@ -140,6 +169,12 @@ function toggleTheme() {
  */
 function updateThemeIcon(theme = currentTheme) {
     const themeIcon = document.getElementById('theme-icon');
+    if (!themeIcon) {
+        console.error('Elemento theme-icon não encontrado');
+        return;
+    }
+
+    console.log('Atualizando ícone para tema:', theme);
     if (theme === 'dark') {
         themeIcon.classList.remove('bi-sun-fill');
         themeIcon.classList.add('bi-moon-fill');

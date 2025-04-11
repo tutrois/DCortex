@@ -26,7 +26,7 @@
     --gradient-accent: linear-gradient(135deg, #f72585, #b5179e);
 }
 
-[data-bs-theme="dark"] {
+[data-bs-theme="dark"], .dark-theme {
     /* Dark Theme */
     --primary-color: #4cc9f0;
     --secondary-color: #4895ef;
@@ -46,6 +46,21 @@
     --gradient-danger: linear-gradient(135deg, #ef233c, #d90429);
     --gradient-warning: linear-gradient(135deg, #ff9e00, #ff6d00);
     --gradient-accent: linear-gradient(135deg, #f72585, #b5179e);
+}
+
+/* Estilos específicos para o tema escuro */
+[data-bs-theme="dark"] .card, .dark-theme .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .sidebar, .dark-theme .sidebar {
+    background-color: var(--light-bg);
+}
+
+[data-bs-theme="dark"] .theme-toggle, .dark-theme .theme-toggle {
+    color: var(--text-color);
+    background-color: var(--card-bg);
 }
 
 /* Estilos base */
