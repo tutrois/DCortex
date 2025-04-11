@@ -16,6 +16,7 @@ class Product:
         image_url (Optional[str]): URL da imagem do produto
         url (Optional[str]): URL da página do produto
         description (Optional[str]): Descrição do produto
+        classificacao (Optional[int]): Quantidade de classificação do produto
     """
     name: str
     price: float

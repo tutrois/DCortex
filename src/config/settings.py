@@ -14,23 +14,21 @@ class Config:
     DEBUG = False
     TESTING = False
     SECRET_KEY = os.getenv('SECRET_KEY', 'chave-secreta-padrao')
-    
+
     # Configurações do Langflow
-    LANGFLOW_API_URL = os.getenv('LANGFLOW_API_URL', 'http://127.0.0.1:7860/api/v1/run/98bc1dc9-3bb8-4941-ad26-3e26e775c31b')
-    
+    LANGFLOW_FETCHER_API_URL = os.getenv('LANGFLOW_FETCHER_API_URL')
+    LANGFLOW_FORMATTER_API_URL = os.getenv('LANGFLOW_FORMATTER_API_URL')
+
     # Configurações de API
     OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-    
+
     # Configurações de timeout e retry
-    REQUEST_TIMEOUT = int(os.getenv('REQUEST_TIMEOUT', 500))
-    MAX_RETRIES = int(os.getenv('MAX_RETRIES', 5))
-    RETRY_DELAY = int(os.getenv('RETRY_DELAY', 10))
-    
+    REQUEST_TIMEOUT = int(os.getenv('REQUEST_TIMEOUT'))
+    MAX_RETRIES = int(os.getenv('MAX_RETRIES'))
+    RETRY_DELAY = int(os.getenv('RETRY_DELAY'))
+
     # URL padrão para scraping
-    DEFAULT_SCRAPE_URL = os.getenv(
-        'DEFAULT_SCRAPE_URL', 
-        'https://www.amazon.com.br/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0'
-    )
+    DEFAULT_SCRAPE_URL = os.getenv('DEFAULT_SCRAPE_URL')
 
 class DevelopmentConfig(Config):
     """Configuração para ambiente de desenvolvimento."""

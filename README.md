@@ -1,18 +1,22 @@
 # DCortex Amazon Dashboard
 
-Dashboard para análise de produtos da Amazon, utilizando web scraping e processamento de dados com múltiplos agentes.
+Dashboard para análise de produtos da Amazon, utilizando web scraping e processamento de dados com múltiplos agentes em uma arquitetura de pipeline.
 
 ## Visão Geral
 
-O DCortex Amazon Dashboard é uma aplicação web que coleta, processa e visualiza dados de produtos da Amazon. A aplicação utiliza uma arquitetura de múltiplos agentes para coletar e processar os dados, permitindo uma análise detalhada dos produtos.
+O DCortex Amazon Dashboard é uma aplicação web moderna que coleta, processa e visualiza dados de produtos da Amazon. A aplicação utiliza uma arquitetura de múltiplos agentes em pipeline para coletar, limpar e formatar os dados, permitindo uma análise detalhada dos produtos com uma interface elegante e responsiva.
 
 ## Funcionalidades
 
 - **Coleta de Dados**: Coleta dados de produtos da Amazon usando web scraping
+- **Pipeline de Processamento**: Utiliza múltiplos agentes em sequência para limpar e formatar os dados
 - **Processamento de Dados**: Processa e analisa os dados coletados
-- **Visualização de Dados**: Apresenta os dados em um dashboard interativo
+- **Visualização de Dados**: Apresenta os dados em um dashboard interativo e elegante
 - **Tema Claro/Escuro**: Suporte para alternar entre temas claro e escuro
 - **Design Responsivo**: Interface adaptável para diferentes tamanhos de tela
+- **Navegação por Categorias**: Acesso rápido a diversas categorias de produtos da Amazon
+- **Estatísticas de Preços**: Visualização de preços médios, mínimos e máximos
+- **Classificação de Produtos**: Exibição da classificação de vendas dos produtos
 
 ## Estrutura do Projeto
 
@@ -29,7 +33,6 @@ src/
 ├── static/             # Arquivos estáticos
 │   ├── css/            # Estilos CSS
 │   ├── js/             # Scripts JavaScript
-│   └── components/     # Componentes estáticos
 ├── templates/          # Templates HTML
 │   └── components/     # Componentes HTML
 └── utils/              # Utilitários
@@ -69,9 +72,10 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
 
 ### Agentes Disponíveis
 
-- **ColetorDadosAmazon**: Agente especializado em coletar e processar dados de produtos da Amazon
+- **ColetorDadosAmazon**: Conjunto de agentes especializados em coletar, limpar e formatar dados de produtos da Amazon
   - **ColetorDadosAmazon - Busca**: Responsável por buscar dados brutos da Amazon
-  - **ColetorDadosAmazon - Processamento**: Responsável por processar e estruturar os dados obtidos
+  - **ColetorDadosAmazon - Processamento**: Responsável por limpar os dados brutos obtidos
+  - **ColetorDadosAmazon - Formatação**: Responsável por formatar os dados limpos em um formato estruturado
 
 ## Instalação
 
@@ -105,12 +109,13 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
    ```
    FLASK_ENV=development
    SECRET_KEY=sua-chave-secreta
-   LANGFLOW_API_URL=http://localhost:7860/api/v1/run/
+   LANGFLOW_API_URL=http://localhost:7860/api/v1/run/seu-id-do-fluxo-de-processamento
+   LANGFLOW_FORMATTER_API_URL=http://localhost:7860/api/v1/run/seu-id-do-fluxo-de-formatacao
    OPENAI_API_KEY=sua-chave-api-openai
    DEFAULT_SCRAPE_URL=https://www.amazon.com.br/gp/bestsellers/?ref_=nav_cs_bestsellers
    ```
 
-## Configuração do Langflow e do Bot
+## Configuração do Langflow e dos Fluxos
 
 1. Inicie o Langflow:
    ```bash
@@ -118,7 +123,7 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
    ```
    O Langflow estará disponível em `http://localhost:7860`
 
-2. Importe o fluxo do bot ColetorDadosAmazon:
+2. Importe o fluxo de processamento ColetorDadosAmazon:
    - Acesse a interface do Langflow no navegador
    - Clique em "Import"
    - Selecione o arquivo `flows/coletor_dados_amazon.json` do repositório
@@ -127,10 +132,20 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
    - Clique em "Build" para construir o fluxo
    - Clique em "Deploy" para implantar o fluxo
 
-3. Copie a URL da API do fluxo implantado:
-   - Após implantar, clique em "API Reference"
-   - Copie a URL completa da API (algo como `http://localhost:7860/api/v1/run/98bc1dc9-3bb8-4941-ad26-3e26e775c31b`)
+3. Importe o fluxo de formatação Formatador_Dados_Amazon:
+   - Clique em "Import"
+   - Selecione o arquivo `flows/Formatador_Dados_Amazon.json` do repositório
+   - Após importar, clique em "Edit" no fluxo
+   - Verifique se todos os componentes estão configurados corretamente
+   - Clique em "Build" para construir o fluxo
+   - Clique em "Deploy" para implantar o fluxo
+
+4. Copie as URLs das APIs dos fluxos implantados:
+   - Após implantar cada fluxo, clique em "API Reference"
+   - Copie a URL completa da API do fluxo de processamento (algo como `http://localhost:7860/api/v1/run/98bc1dc9-3bb8-4941-ad26-3e26e775c31b`)
    - Atualize a variável `LANGFLOW_API_URL` no arquivo `.env` com esta URL
+   - Copie a URL completa da API do fluxo de formatação (algo como `http://localhost:7860/api/v1/run/96c06e73-9a8a-42f7-b4a5-cc62291ecc46`)
+   - Atualize a variável `LANGFLOW_FORMATTER_API_URL` no arquivo `.env` com esta URL
 
 ## Execução
 
@@ -149,9 +164,11 @@ O projeto implementa uma arquitetura flexível de agentes que permite:
    http://localhost:5000
    ```
 
-## Estrutura do Fluxo do Bot
+## Estrutura dos Fluxos
 
-O fluxo do bot ColetorDadosAmazon consiste em:
+### Fluxo de Processamento (ColetorDadosAmazon)
+
+O fluxo de processamento consiste em:
 
 1. **TextInputComponent**: Recebe a URL da Amazon com o prefixo `https://r.jina.ai/`
 2. **WebScraper**: Extrai dados da página da Amazon
@@ -159,13 +176,22 @@ O fluxo do bot ColetorDadosAmazon consiste em:
 4. **LLMChain**: Processa os dados usando um modelo de linguagem
 5. **OutputParser**: Estrutura a saída em formato JSON
 
-O bot retorna um JSON com os seguintes campos para cada produto:
-- `posição`: Posição do produto na lista
+Este fluxo retorna dados brutos limpos em formato JSON.
+
+### Fluxo de Formatação (Formatador_Dados_Amazon)
+
+O fluxo de formatação recebe os dados limpos do fluxo de processamento e os formata em uma estrutura padronizada.
+
+### Formato de Dados Final
+
+O sistema retorna um JSON com os seguintes campos para cada produto:
+- `posicao`: Posição do produto na lista
 - `imagem`: URL da imagem do produto
 - `titulo`: Nome do produto
 - `preco`: Preço do produto
 - `rating`: Avaliação do produto
 - `url_produto`: URL do produto
+- `classificacao`: Número de avaliações/vendas do produto
 
 ### API Endpoints
 
@@ -174,6 +200,7 @@ O bot retorna um JSON com os seguintes campos para cada produto:
   - Parâmetros opcionais:
     - `fetcher`: Tipo de agente de busca a ser usado (ex: `coletor_dados_amazon_fetcher`)
     - `processor`: Tipo de agente de processamento a ser usado (ex: `coletor_dados_amazon_processor`)
+    - `formatter`: Tipo de agente de formatação a ser usado (ex: `coletor_dados_amazon_formatter`)
     - `source`: URL fonte para busca de dados
 - **GET /agents**: Lista os agentes disponíveis no sistema
 
@@ -188,7 +215,28 @@ pytest
 ## Tecnologias Utilizadas
 
 - **Backend**: Python, Flask
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap, Chart.js
-- **Processamento de dados**: Langflow
-- **Padrões de Design**: Factory, Registry, Strategy
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap 5, Chart.js
+- **Processamento de dados**: Langflow, CrewAi e LLM
+- **Padrões de Design**: Factory, Registry, Strategy, Pipeline
 - **Testes**: Pytest
+
+## Interface do Usuário
+
+A interface do usuário foi projetada para ser moderna, elegante e fácil de usar:
+
+- **Dashboard Principal**: Exibe cards de produtos, gráficos e estatísticas
+- **Sidebar**: Permite navegação entre diferentes categorias de produtos
+- **Cards de Produtos**: Exibem informações detalhadas sobre cada produto, incluindo imagem, título, preço, avaliação e classificação
+- **Gráficos**: Visualização de preços e outras métricas
+- **Tema Claro/Escuro**: Botão para alternar entre os temas
+
+## Arquitetura de Pipeline
+
+O sistema utiliza uma arquitetura de pipeline para processamento de dados:
+
+1. **Coleta de Dados**: O primeiro agente coleta dados brutos da Amazon
+2. **Limpeza de Dados**: O segundo agente limpa os dados brutos e extrai informações relevantes
+3. **Formatação de Dados**: O terceiro agente formata os dados limpos em uma estrutura padronizada
+4. **Visualização**: Os dados formatados são exibidos na interface do usuário
+
+Esta arquitetura permite uma separação clara de responsabilidades e facilita a manutenção e extensão do sistema.

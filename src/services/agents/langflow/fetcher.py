@@ -28,7 +28,7 @@ class LangflowFetcherAgent(BaseDataFetcherAgent):
             description (str): Descrição do agente
         """
         super().__init__(name, description)
-        self.url = api_url or active_config.LANGFLOW_API_URL
+        self.url = api_url or active_config.LANGFLOW_FETCHER_API_URL
         self.max_retries = active_config.MAX_RETRIES
         self.retry_delay = active_config.RETRY_DELAY
         self.timeout = active_config.REQUEST_TIMEOUT

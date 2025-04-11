@@ -48,6 +48,7 @@ def fetch_data():
         # Obtém parâmetros opcionais da requisição
         fetcher_type = request.args.get('fetcher')
         processor_type = request.args.get('processor')
+        formatter_type = request.args.get('formatter')
 
         # Obtém a URL de origem
         source = request.args.get('source')
@@ -76,7 +77,8 @@ def fetch_data():
         produtos = orchestrator.fetch_and_process_products(
             source=source,
             fetcher_type=fetcher_type,
-            processor_type=processor_type
+            processor_type=processor_type,
+            formatter_type=formatter_type
         )
 
         if not produtos:

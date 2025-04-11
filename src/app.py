@@ -15,9 +15,6 @@ def create_app(config_name='development'):
     """
     Factory para criar a aplicação Flask.
 
-    Args:
-        config_name (str): Nome da configuração a ser usada
-
     Returns:
         Flask: Aplicação Flask configurada
     """

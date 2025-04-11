@@ -5,7 +5,7 @@ from typing import Dict, Any, List
 
 from src.config.settings import active_config
 from src.services.agents.registry import AgentRegistry
-from src.services.agents.langflow import LangflowFetcherAgent, LangflowProcessorAgent
+from src.services.agents.langflow import LangflowFetcherAgent, LangflowProcessorAgent, LangflowFormatterAgent
 from src.utils.logging import get_logger
 
 logger = get_logger(__name__)
@@ -19,12 +19,13 @@ def register_default_agents() -> None:
     # Registra os agentes Langflow
     registry.register_agent_class("langflow_fetcher", LangflowFetcherAgent)
     registry.register_agent_class("langflow_processor", LangflowProcessorAgent)
+    registry.register_agent_class("langflow_formatter", LangflowFormatterAgent)
 
     # Registra fábricas para criar agentes com configurações específicas
     registry.register_agent_factory(
         "coletor_dados_amazon_fetcher",
         lambda: LangflowFetcherAgent(
-            api_url=active_config.LANGFLOW_API_URL,
+            api_url=active_config.LANGFLOW_FORMATTER_API_URL,
             name="ColetorDadosAmazon - Busca",
             description="Agente especializado em buscar dados de produtos da Amazon"
         )
@@ -35,6 +36,15 @@ def register_default_agents() -> None:
         lambda: LangflowProcessorAgent(
             name="ColetorDadosAmazon - Processamento",
             description="Agente especializado em processar dados de produtos da Amazon"
+        )
+    )
+
+    registry.register_agent_factory(
+        "coletor_dados_amazon_formatter",
+        lambda: LangflowFormatterAgent(
+            name="ColetorDadosAmazon - Formatação",
+            description="Agente especializado em formatar dados de produtos da Amazon",
+            api_url=active_config.LANGFLOW_FORMATTER_API_URL
         )
     )
 
@@ -50,6 +60,7 @@ def get_agent_config() -> Dict[str, Any]:
     return {
         "default_fetcher": "coletor_dados_amazon_fetcher",
         "default_processor": "coletor_dados_amazon_processor",
+        "default_formatter": "coletor_dados_amazon_formatter",
         "available_agents": {
             "fetchers": [
                 {
@@ -73,6 +84,18 @@ def get_agent_config() -> Dict[str, Any]:
                     "id": "langflow_processor",
                     "name": "Langflow Processor",
                     "description": "Agente genérico para processamento de dados do Langflow"
+                }
+            ],
+            "formatters": [
+                {
+                    "id": "coletor_dados_amazon_formatter",
+                    "name": "ColetorDadosAmazon - Formatação",
+                    "description": "Agente especializado em formatar dados de produtos da Amazon"
+                },
+                {
+                    "id": "langflow_formatter",
+                    "name": "Langflow Formatter",
+                    "description": "Agente genérico para formatação de dados do Langflow"
                 }
             ]
         }

@@ -1,0 +1,1492 @@
+{
+  "access_type": "PRIVATE",
+  "data": {
+    "edges": [
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-HH8Kr",
+            "name": "model_output",
+            "output_types": [
+              "LanguageModel"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "llm",
+            "id": "CrewAIAgentComponent-vrOmR",
+            "inputTypes": [
+              "LanguageModel"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__OpenAIModel-HH8Kr{œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-HH8Krœ,œnameœ:œmodel_outputœ,œoutput_typesœ:[œLanguageModelœ]}-CrewAIAgentComponent-vrOmR{œfieldNameœ:œllmœ,œidœ:œCrewAIAgentComponent-vrOmRœ,œinputTypesœ:[œLanguageModelœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "OpenAIModel-HH8Kr",
+        "sourceHandle": "{œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-HH8Krœ,œnameœ:œmodel_outputœ,œoutput_typesœ:[œLanguageModelœ]}",
+        "target": "CrewAIAgentComponent-vrOmR",
+        "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œCrewAIAgentComponent-vrOmRœ,œinputTypesœ:[œLanguageModelœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "TextInput",
+            "id": "TextInput-6CCb9",
+            "name": "text",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "goal",
+            "id": "CrewAIAgentComponent-vrOmR",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__TextInput-6CCb9{œdataTypeœ:œTextInputœ,œidœ:œTextInput-6CCb9œ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}-CrewAIAgentComponent-vrOmR{œfieldNameœ:œgoalœ,œidœ:œCrewAIAgentComponent-vrOmRœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "TextInput-6CCb9",
+        "sourceHandle": "{œdataTypeœ:œTextInputœ,œidœ:œTextInput-6CCb9œ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "CrewAIAgentComponent-vrOmR",
+        "targetHandle": "{œfieldNameœ:œgoalœ,œidœ:œCrewAIAgentComponent-vrOmRœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "CrewAIAgentComponent",
+            "id": "CrewAIAgentComponent-vrOmR",
+            "name": "output",
+            "output_types": [
+              "Agent"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "agent",
+            "id": "SequentialTaskComponent-MfIt4",
+            "inputTypes": [
+              "Agent"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__CrewAIAgentComponent-vrOmR{œdataTypeœ:œCrewAIAgentComponentœ,œidœ:œCrewAIAgentComponent-vrOmRœ,œnameœ:œoutputœ,œoutput_typesœ:[œAgentœ]}-SequentialTaskComponent-MfIt4{œfieldNameœ:œagentœ,œidœ:œSequentialTaskComponent-MfIt4œ,œinputTypesœ:[œAgentœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "CrewAIAgentComponent-vrOmR",
+        "sourceHandle": "{œdataTypeœ:œCrewAIAgentComponentœ,œidœ:œCrewAIAgentComponent-vrOmRœ,œnameœ:œoutputœ,œoutput_typesœ:[œAgentœ]}",
+        "target": "SequentialTaskComponent-MfIt4",
+        "targetHandle": "{œfieldNameœ:œagentœ,œidœ:œSequentialTaskComponent-MfIt4œ,œinputTypesœ:[œAgentœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "SequentialTaskComponent",
+            "id": "SequentialTaskComponent-MfIt4",
+            "name": "task_output",
+            "output_types": [
+              "SequentialTask"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "tasks",
+            "id": "SequentialCrewComponent-U7qJE",
+            "inputTypes": [
+              "SequentialTask"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__SequentialTaskComponent-MfIt4{œdataTypeœ:œSequentialTaskComponentœ,œidœ:œSequentialTaskComponent-MfIt4œ,œnameœ:œtask_outputœ,œoutput_typesœ:[œSequentialTaskœ]}-SequentialCrewComponent-U7qJE{œfieldNameœ:œtasksœ,œidœ:œSequentialCrewComponent-U7qJEœ,œinputTypesœ:[œSequentialTaskœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "SequentialTaskComponent-MfIt4",
+        "sourceHandle": "{œdataTypeœ:œSequentialTaskComponentœ,œidœ:œSequentialTaskComponent-MfIt4œ,œnameœ:œtask_outputœ,œoutput_typesœ:[œSequentialTaskœ]}",
+        "target": "SequentialCrewComponent-U7qJE",
+        "targetHandle": "{œfieldNameœ:œtasksœ,œidœ:œSequentialCrewComponent-U7qJEœ,œinputTypesœ:[œSequentialTaskœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "SequentialCrewComponent",
+            "id": "SequentialCrewComponent-U7qJE",
+            "name": "output",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "TextOutput-waNmh",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__SequentialCrewComponent-U7qJE{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-U7qJEœ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}-TextOutput-waNmh{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-waNmhœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "SequentialCrewComponent-U7qJE",
+        "sourceHandle": "{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-U7qJEœ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "TextOutput-waNmh",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-waNmhœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      }
+    ],
+    "nodes": [
+      {
+        "data": {
+          "id": "OpenAIModel-HH8Kr",
+          "node": {
+            "base_classes": [
+              "LanguageModel",
+              "Message"
+            ],
+            "beta": false,
+            "category": "models",
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Generates text using OpenAI LLMs.",
+            "display_name": "OpenAI",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "system_message",
+              "stream",
+              "max_tokens",
+              "model_kwargs",
+              "json_mode",
+              "model_name",
+              "openai_api_base",
+              "api_key",
+              "temperature",
+              "seed",
+              "max_retries",
+              "timeout"
+            ],
+            "frozen": false,
+            "icon": "OpenAI",
+            "key": "OpenAIModel",
+            "legacy": false,
+            "lf_version": "1.3.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "text_response",
+                "name": "text_output",
+                "required_inputs": [],
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Language Model",
+                "method": "build_model",
+                "name": "model_output",
+                "required_inputs": [
+                  "api_key"
+                ],
+                "selected": "LanguageModel",
+                "tool_mode": true,
+                "types": [
+                  "LanguageModel"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "score": 0.001,
+            "template": {
+              "_type": "Component",
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "OpenAI API Key",
+                "dynamic": false,
+                "info": "The OpenAI API Key to use for the OpenAI model.",
+                "input_types": [
+                  "Message"
+                ],
+                "load_from_db": true,
+                "name": "api_key",
+                "password": true,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": "OPENAI_API_KEY"
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langchain_openai import ChatOpenAI\nfrom pydantic.v1 import SecretStr\n\nfrom langflow.base.models.model import LCModelComponent\nfrom langflow.base.models.openai_constants import OPENAI_MODEL_NAMES\nfrom langflow.field_typing import LanguageModel\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.inputs import BoolInput, DictInput, DropdownInput, IntInput, SecretStrInput, SliderInput, StrInput\n\n\nclass OpenAIModelComponent(LCModelComponent):\n    display_name = \"OpenAI\"\n    description = \"Generates text using OpenAI LLMs.\"\n    icon = \"OpenAI\"\n    name = \"OpenAIModel\"\n\n    inputs = [\n        *LCModelComponent._base_inputs,\n        IntInput(\n            name=\"max_tokens\",\n            display_name=\"Max Tokens\",\n            advanced=True,\n            info=\"The maximum number of tokens to generate. Set to 0 for unlimited tokens.\",\n            range_spec=RangeSpec(min=0, max=128000),\n        ),\n        DictInput(\n            name=\"model_kwargs\",\n            display_name=\"Model Kwargs\",\n            advanced=True,\n            info=\"Additional keyword arguments to pass to the model.\",\n        ),\n        BoolInput(\n            name=\"json_mode\",\n            display_name=\"JSON Mode\",\n            advanced=True,\n            info=\"If True, it will output JSON regardless of passing a schema.\",\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            advanced=False,\n            options=OPENAI_MODEL_NAMES,\n            value=OPENAI_MODEL_NAMES[1],\n            combobox=True,\n        ),\n        StrInput(\n            name=\"openai_api_base\",\n            display_name=\"OpenAI API Base\",\n            advanced=True,\n            info=\"The base URL of the OpenAI API. \"\n            \"Defaults to https://api.openai.com/v1. \"\n            \"You can change this to use other APIs like JinaChat, LocalAI and Prem.\",\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"OpenAI API Key\",\n            info=\"The OpenAI API Key to use for the OpenAI model.\",\n            advanced=False,\n            value=\"OPENAI_API_KEY\",\n            required=True,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            value=0.1,\n            range_spec=RangeSpec(min=0, max=1, step=0.01),\n            advanced=True,\n        ),\n        IntInput(\n            name=\"seed\",\n            display_name=\"Seed\",\n            info=\"The seed controls the reproducibility of the job.\",\n            advanced=True,\n            value=1,\n        ),\n        IntInput(\n            name=\"max_retries\",\n            display_name=\"Max Retries\",\n            info=\"The maximum number of retries to make when generating.\",\n            advanced=True,\n            value=5,\n        ),\n        IntInput(\n            name=\"timeout\",\n            display_name=\"Timeout\",\n            info=\"The timeout for requests to OpenAI completion API.\",\n            advanced=True,\n            value=700,\n        ),\n    ]\n\n    def build_model(self) -> LanguageModel:  # type: ignore[type-var]\n        openai_api_key = self.api_key\n        temperature = self.temperature\n        model_name: str = self.model_name\n        max_tokens = self.max_tokens\n        model_kwargs = self.model_kwargs or {}\n        openai_api_base = self.openai_api_base or \"https://api.openai.com/v1\"\n        json_mode = self.json_mode\n        seed = self.seed\n        max_retries = self.max_retries\n        timeout = self.timeout\n\n        api_key = SecretStr(openai_api_key).get_secret_value() if openai_api_key else None\n        output = ChatOpenAI(\n            max_tokens=max_tokens or None,\n            model_kwargs=model_kwargs,\n            model=model_name,\n            base_url=openai_api_base,\n            api_key=api_key,\n            temperature=temperature if temperature is not None else 0.1,\n            seed=seed,\n            max_retries=max_retries,\n            request_timeout=timeout,\n        )\n        if json_mode:\n            output = output.bind(response_format={\"type\": \"json_object\"})\n\n        return output\n\n    def _get_exception_message(self, e: Exception):\n        \"\"\"Get a message from an OpenAI exception.\n\n        Args:\n            e (Exception): The exception to get the message from.\n\n        Returns:\n            str: The message from the exception.\n        \"\"\"\n        try:\n            from openai import BadRequestError\n        except ImportError:\n            return None\n        if isinstance(e, BadRequestError):\n            message = e.body.get(\"message\")\n            if message:\n                return message\n        return None\n"
+              },
+              "input_value": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Input",
+                "dynamic": false,
+                "info": "",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "json_mode": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "JSON Mode",
+                "dynamic": false,
+                "info": "If True, it will output JSON regardless of passing a schema.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "json_mode",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "max_retries": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Max Retries",
+                "dynamic": false,
+                "info": "The maximum number of retries to make when generating.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "max_retries",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 5
+              },
+              "max_tokens": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Max Tokens",
+                "dynamic": false,
+                "info": "The maximum number of tokens to generate. Set to 0 for unlimited tokens.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "max_tokens",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 128000,
+                  "min": 0,
+                  "step": 0.1,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": ""
+              },
+              "model_kwargs": {
+                "_input_type": "DictInput",
+                "advanced": true,
+                "display_name": "Model Kwargs",
+                "dynamic": false,
+                "info": "Additional keyword arguments to pass to the model.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "model_kwargs",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "type": "dict",
+                "value": {}
+              },
+              "model_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": true,
+                "dialog_inputs": {},
+                "display_name": "Model Name",
+                "dynamic": false,
+                "info": "",
+                "name": "model_name",
+                "options": [
+                  "gpt-4o-mini",
+                  "gpt-4o",
+                  "gpt-4.5-preview",
+                  "gpt-4-turbo",
+                  "gpt-4-turbo-preview",
+                  "gpt-4",
+                  "gpt-3.5-turbo"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "gpt-4o-mini"
+              },
+              "openai_api_base": {
+                "_input_type": "StrInput",
+                "advanced": true,
+                "display_name": "OpenAI API Base",
+                "dynamic": false,
+                "info": "The base URL of the OpenAI API. Defaults to https://api.openai.com/v1. You can change this to use other APIs like JinaChat, LocalAI and Prem.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "openai_api_base",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "seed": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Seed",
+                "dynamic": false,
+                "info": "The seed controls the reproducibility of the job.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "seed",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 1
+              },
+              "stream": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Stream",
+                "dynamic": false,
+                "info": "Stream the response from the model. Streaming works only in Chat.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "stream",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "system_message": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "System Message",
+                "dynamic": false,
+                "info": "System message to pass to the model.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "system_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "temperature": {
+                "_input_type": "SliderInput",
+                "advanced": true,
+                "display_name": "Temperature",
+                "dynamic": false,
+                "info": "",
+                "max_label": "",
+                "max_label_icon": "",
+                "min_label": "",
+                "min_label_icon": "",
+                "name": "temperature",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 1,
+                  "min": 0,
+                  "step": 0.01,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "slider_buttons": false,
+                "slider_buttons_options": [],
+                "slider_input": false,
+                "title_case": false,
+                "tool_mode": false,
+                "type": "slider",
+                "value": 0.1
+              },
+              "timeout": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Timeout",
+                "dynamic": false,
+                "info": "The timeout for requests to OpenAI completion API.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "timeout",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 700
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "OpenAIModel"
+        },
+        "dragging": false,
+        "id": "OpenAIModel-HH8Kr",
+        "measured": {
+          "height": 523,
+          "width": 320
+        },
+        "position": {
+          "x": 2208.8501652806385,
+          "y": 905.1663328790752
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "CrewAIAgentComponent-vrOmR",
+          "node": {
+            "base_classes": [
+              "Agent"
+            ],
+            "beta": false,
+            "category": "crewai",
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Represents an agent of CrewAI.",
+            "display_name": "CrewAI Agent",
+            "documentation": "https://docs.crewai.com/how-to/LLM-Connections/",
+            "edited": false,
+            "field_order": [
+              "role",
+              "goal",
+              "backstory",
+              "tools",
+              "llm",
+              "memory",
+              "verbose",
+              "allow_delegation",
+              "allow_code_execution",
+              "kwargs"
+            ],
+            "frozen": false,
+            "icon": "CrewAI",
+            "key": "CrewAIAgentComponent",
+            "legacy": false,
+            "lf_version": "1.3.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Agent",
+                "method": "build_output",
+                "name": "output",
+                "selected": "Agent",
+                "tool_mode": true,
+                "types": [
+                  "Agent"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "score": 0.000007568328950209746,
+            "template": {
+              "_type": "Component",
+              "allow_code_execution": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Allow Code Execution",
+                "dynamic": false,
+                "info": "Whether the agent is allowed to execute code.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "allow_code_execution",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "allow_delegation": {
+                "_input_type": "BoolInput",
+                "advanced": false,
+                "display_name": "Allow Delegation",
+                "dynamic": false,
+                "info": "Whether the agent is allowed to delegate tasks to other agents.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "allow_delegation",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "backstory": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Backstory",
+                "dynamic": false,
+                "info": "The backstory of the agent.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "backstory",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "Você é um especialista em estruturas de dados e seu papel é pegar informações limpas extraídas de um scraping da Amazon e organizá-las em formato JSON, com chaves padronizadas.\n\nCampos esperados por produto:\n- nome\n- preco\n- avaliacao\n- imagem\n- posicao\n-url produto\n\n⚠️ Caso alguma informação esteja ausente, omita-a do JSON. Retorne uma lista com todos os produtos encontrados."
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from crewai import Agent\n\nfrom langflow.base.agents.crewai.crew import convert_llm, convert_tools\nfrom langflow.custom import Component\nfrom langflow.io import BoolInput, DictInput, HandleInput, MultilineInput, Output\n\n\nclass CrewAIAgentComponent(Component):\n    \"\"\"Component for creating a CrewAI agent.\n\n    This component allows you to create a CrewAI agent with the specified role, goal, backstory, tools,\n    and language model.\n\n    Args:\n        Component (Component): Base class for all components.\n\n    Returns:\n        Agent: CrewAI agent.\n    \"\"\"\n\n    display_name = \"CrewAI Agent\"\n    description = \"Represents an agent of CrewAI.\"\n    documentation: str = \"https://docs.crewai.com/how-to/LLM-Connections/\"\n    icon = \"CrewAI\"\n\n    inputs = [\n        MultilineInput(name=\"role\", display_name=\"Role\", info=\"The role of the agent.\"),\n        MultilineInput(name=\"goal\", display_name=\"Goal\", info=\"The objective of the agent.\"),\n        MultilineInput(name=\"backstory\", display_name=\"Backstory\", info=\"The backstory of the agent.\"),\n        HandleInput(\n            name=\"tools\",\n            display_name=\"Tools\",\n            input_types=[\"Tool\"],\n            is_list=True,\n            info=\"Tools at agents disposal\",\n            value=[],\n        ),\n        HandleInput(\n            name=\"llm\",\n            display_name=\"Language Model\",\n            info=\"Language model that will run the agent.\",\n            input_types=[\"LanguageModel\"],\n        ),\n        BoolInput(\n            name=\"memory\",\n            display_name=\"Memory\",\n            info=\"Whether the agent should have memory or not\",\n            advanced=True,\n            value=True,\n        ),\n        BoolInput(\n            name=\"verbose\",\n            display_name=\"Verbose\",\n            advanced=True,\n            value=False,\n        ),\n        BoolInput(\n            name=\"allow_delegation\",\n            display_name=\"Allow Delegation\",\n            info=\"Whether the agent is allowed to delegate tasks to other agents.\",\n            value=True,\n        ),\n        BoolInput(\n            name=\"allow_code_execution\",\n            display_name=\"Allow Code Execution\",\n            info=\"Whether the agent is allowed to execute code.\",\n            value=False,\n            advanced=True,\n        ),\n        DictInput(\n            name=\"kwargs\",\n            display_name=\"kwargs\",\n            info=\"kwargs of agent.\",\n            is_list=True,\n            advanced=True,\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Agent\", name=\"output\", method=\"build_output\"),\n    ]\n\n    def build_output(self) -> Agent:\n        kwargs = self.kwargs or {}\n\n        # Define the Agent\n        agent = Agent(\n            role=self.role,\n            goal=self.goal,\n            backstory=self.backstory,\n            llm=convert_llm(self.llm),\n            verbose=self.verbose,\n            memory=self.memory,\n            tools=convert_tools(self.tools),\n            allow_delegation=self.allow_delegation,\n            allow_code_execution=self.allow_code_execution,\n            **kwargs,\n        )\n\n        self.status = repr(agent)\n\n        return agent\n"
+              },
+              "goal": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Goal",
+                "dynamic": false,
+                "info": "The objective of the agent.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "goal",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "kwargs": {
+                "_input_type": "DictInput",
+                "advanced": true,
+                "display_name": "kwargs",
+                "dynamic": false,
+                "info": "kwargs of agent.",
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "kwargs",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "type": "dict",
+                "value": {}
+              },
+              "llm": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Language Model",
+                "dynamic": false,
+                "info": "Language model that will run the agent.",
+                "input_types": [
+                  "LanguageModel"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "llm",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "memory": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Memory",
+                "dynamic": false,
+                "info": "Whether the agent should have memory or not",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "memory",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "role": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Role",
+                "dynamic": false,
+                "info": "The role of the agent.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "role",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "Formatador de Dados da Amazon"
+              },
+              "tools": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Tools",
+                "dynamic": false,
+                "info": "Tools at agents disposal",
+                "input_types": [
+                  "Tool"
+                ],
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "tools",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": []
+              },
+              "verbose": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Verbose",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "verbose",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "CrewAIAgentComponent"
+        },
+        "dragging": false,
+        "id": "CrewAIAgentComponent-vrOmR",
+        "measured": {
+          "height": 523,
+          "width": 320
+        },
+        "position": {
+          "x": 2695.0516391832875,
+          "y": 660.2608564544797
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "SequentialTaskComponent-MfIt4",
+          "node": {
+            "base_classes": [
+              "SequentialTask"
+            ],
+            "beta": false,
+            "category": "crewai",
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Each task must have a description, an expected output and an agent responsible for execution.",
+            "display_name": "Sequential Task",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "task_description",
+              "expected_output",
+              "tools",
+              "agent",
+              "task",
+              "async_execution"
+            ],
+            "frozen": false,
+            "icon": "CrewAI",
+            "key": "SequentialTaskComponent",
+            "legacy": false,
+            "lf_version": "1.3.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Task",
+                "method": "build_task",
+                "name": "task_output",
+                "selected": "SequentialTask",
+                "tool_mode": true,
+                "types": [
+                  "SequentialTask"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "score": 0.001,
+            "template": {
+              "_type": "Component",
+              "agent": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Agent",
+                "dynamic": false,
+                "info": "CrewAI Agent that will perform the task",
+                "input_types": [
+                  "Agent"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "agent",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "async_execution": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Async Execution",
+                "dynamic": false,
+                "info": "Boolean flag indicating asynchronous task execution.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "async_execution",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.agents.crewai.tasks import SequentialTask\nfrom langflow.custom import Component\nfrom langflow.io import BoolInput, HandleInput, MultilineInput, Output\n\n\nclass SequentialTaskComponent(Component):\n    display_name: str = \"Sequential Task\"\n    description: str = \"Each task must have a description, an expected output and an agent responsible for execution.\"\n    icon = \"CrewAI\"\n    inputs = [\n        MultilineInput(\n            name=\"task_description\",\n            display_name=\"Description\",\n            info=\"Descriptive text detailing task's purpose and execution.\",\n        ),\n        MultilineInput(\n            name=\"expected_output\",\n            display_name=\"Expected Output\",\n            info=\"Clear definition of expected task outcome.\",\n        ),\n        HandleInput(\n            name=\"tools\",\n            display_name=\"Tools\",\n            input_types=[\"Tool\"],\n            is_list=True,\n            info=\"List of tools/resources limited for task execution. Uses the Agent tools by default.\",\n            required=False,\n            advanced=True,\n        ),\n        HandleInput(\n            name=\"agent\",\n            display_name=\"Agent\",\n            input_types=[\"Agent\"],\n            info=\"CrewAI Agent that will perform the task\",\n            required=True,\n        ),\n        HandleInput(\n            name=\"task\",\n            display_name=\"Task\",\n            input_types=[\"SequentialTask\"],\n            info=\"CrewAI Task that will perform the task\",\n        ),\n        BoolInput(\n            name=\"async_execution\",\n            display_name=\"Async Execution\",\n            value=True,\n            advanced=True,\n            info=\"Boolean flag indicating asynchronous task execution.\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Task\", name=\"task_output\", method=\"build_task\"),\n    ]\n\n    def build_task(self) -> list[SequentialTask]:\n        tasks: list[SequentialTask] = []\n        task = SequentialTask(\n            description=self.task_description,\n            expected_output=self.expected_output,\n            tools=self.agent.tools,\n            async_execution=False,\n            agent=self.agent,\n        )\n        tasks.append(task)\n        self.status = task\n        if self.task:\n            if isinstance(self.task, list) and all(isinstance(task, SequentialTask) for task in self.task):\n                tasks = self.task + tasks\n            elif isinstance(self.task, SequentialTask):\n                tasks = [self.task, *tasks]\n        return tasks\n"
+              },
+              "expected_output": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Expected Output",
+                "dynamic": false,
+                "info": "Clear definition of expected task outcome.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "expected_output",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "Lista JSON dos produtos com os campos nome, preco, avaliacao, imagem, posicao, classificação\n\n⚠️ Regras:\n- **NÃO** inclua produtos patrocinados ou anúncios.\n- **NÃO** invente dados. Se nenhum produto for encontrado, retorne um JSON com: {\"error\": \"Nenhum produto encontrado.\"}\n- Retorne **apenas** produtos orgânicos reais exibidos na página.\n\n📦 Para cada produto, colete os seguintes dados:\n- posição: número inteiro indicando a posição no ranking\n- imagem: URL da imagem do produto\n- título: nome/título completo do produto\n- preço: valor em reais (float), sem símbolo, ex: 199.90\n- rating: média da avaliação (float), se disponível\n-url produto: URL do produto, a URL fica logo após o titulo do produto\n-classificacao: número de avaliações (inteiro), ex: 1833\n\n Observações:\n\nA classificação pode estar no formato: \"4,6 de 5 estrelas 1.833\". Extraia o número de avaliações como inteiro, ex: 1833.\nConverta a vírgula da avaliação média em ponto (4,6 → 4.6).\nRemova pontos dos milhares na classificação (1.833 → 1833).\n\n✅ Formato de resposta (JSON limpo):\nUma lista JSON com objetos seguindo este padrão:\n\n[\n  {\n    \"posicao\": 1,\n    \"imagem\": \"https://link-da-imagem.com\",\n    \"titulo\": \"Nome do Produto\",\n    \"preco\": 199.99,\n    \"rating\": 4.7,\n    \"url_produto\": \"https://link-do-produto.com\",\n    \"classificacao\": 1833,\n  },\n  ...\n]\n\n📌 Instruções finais:\n- Retorne **apenas** a string JSON.\n- **Não** inclua `json`, texto explicativo ou marcações de código.\n- remover todo tipo de ruído como \"````\" e retornar apenas o json."
+              },
+              "task": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Task",
+                "dynamic": false,
+                "info": "CrewAI Task that will perform the task",
+                "input_types": [
+                  "SequentialTask"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "task",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "task_description": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Description",
+                "dynamic": false,
+                "info": "Descriptive text detailing task's purpose and execution.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "task_description",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "\tFormatar os dados limpos dos produtos em uma estrutura JSON"
+              },
+              "tools": {
+                "_input_type": "HandleInput",
+                "advanced": true,
+                "display_name": "Tools",
+                "dynamic": false,
+                "info": "List of tools/resources limited for task execution. Uses the Agent tools by default.",
+                "input_types": [
+                  "Tool"
+                ],
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "tools",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "SequentialTaskComponent"
+        },
+        "dragging": false,
+        "id": "SequentialTaskComponent-MfIt4",
+        "measured": {
+          "height": 439,
+          "width": 320
+        },
+        "position": {
+          "x": 3126.708439500516,
+          "y": 733.100856690933
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "SequentialCrewComponent-U7qJE",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "category": "crewai",
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Represents a group of agents with tasks that are executed sequentially.",
+            "display_name": "Sequential Crew",
+            "documentation": "https://docs.crewai.com/how-to/Sequential/",
+            "edited": false,
+            "field_order": [
+              "verbose",
+              "memory",
+              "use_cache",
+              "max_rpm",
+              "share_crew",
+              "function_calling_llm",
+              "tasks"
+            ],
+            "frozen": false,
+            "icon": "CrewAI",
+            "key": "SequentialCrewComponent",
+            "legacy": false,
+            "lf_version": "1.3.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Output",
+                "method": "build_output",
+                "name": "output",
+                "required_inputs": [],
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "score": 0.00021002192191843841,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from crewai import Agent, Crew, Process, Task\n\nfrom langflow.base.agents.crewai.crew import BaseCrewComponent\nfrom langflow.io import HandleInput\nfrom langflow.schema.message import Message\n\n\nclass SequentialCrewComponent(BaseCrewComponent):\n    display_name: str = \"Sequential Crew\"\n    description: str = \"Represents a group of agents with tasks that are executed sequentially.\"\n    documentation: str = \"https://docs.crewai.com/how-to/Sequential/\"\n    icon = \"CrewAI\"\n\n    inputs = [\n        *BaseCrewComponent._base_inputs,\n        HandleInput(name=\"tasks\", display_name=\"Tasks\", input_types=[\"SequentialTask\"], is_list=True),\n    ]\n\n    @property\n    def agents(self: \"SequentialCrewComponent\") -> list[Agent]:\n        # Derive agents directly from linked tasks\n        return [task.agent for task in self.tasks if hasattr(task, \"agent\")]\n\n    def get_tasks_and_agents(self, agents_list=None) -> tuple[list[Task], list[Agent]]:\n        # Use the agents property to derive agents\n        if not agents_list:\n            existing_agents = self.agents\n            agents_list = existing_agents + (agents_list or [])\n\n        return super().get_tasks_and_agents(agents_list=agents_list)\n\n    def build_crew(self) -> Message:\n        tasks, agents = self.get_tasks_and_agents()\n\n        return Crew(\n            agents=agents,\n            tasks=tasks,\n            process=Process.sequential,\n            verbose=self.verbose,\n            memory=self.memory,\n            cache=self.use_cache,\n            max_rpm=self.max_rpm,\n            share_crew=self.share_crew,\n            function_calling_llm=self.function_calling_llm,\n            step_callback=self.get_step_callback(),\n            task_callback=self.get_task_callback(),\n        )\n"
+              },
+              "function_calling_llm": {
+                "_input_type": "HandleInput",
+                "advanced": true,
+                "display_name": "Function Calling LLM",
+                "dynamic": false,
+                "info": "Turns the ReAct CrewAI agent into a function-calling agent",
+                "input_types": [
+                  "LanguageModel"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "function_calling_llm",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "max_rpm": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Max RPM",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "max_rpm",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 100
+              },
+              "memory": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Memory",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "memory",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "share_crew": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Share Crew",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "share_crew",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "tasks": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Tasks",
+                "dynamic": false,
+                "info": "",
+                "input_types": [
+                  "SequentialTask"
+                ],
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "tasks",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "use_cache": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Cache",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "use_cache",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "verbose": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Verbose",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "verbose",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 0
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "SequentialCrewComponent"
+        },
+        "id": "SequentialCrewComponent-U7qJE",
+        "measured": {
+          "height": 211,
+          "width": 320
+        },
+        "position": {
+          "x": 3502.7099934417333,
+          "y": 965.8450220970938
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "TextOutput-waNmh",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Display a text output in the Playground.",
+            "display_name": "Text Output",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value"
+            ],
+            "frozen": false,
+            "icon": "type",
+            "legacy": false,
+            "lf_version": "1.3.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "text_response",
+                "name": "text",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.io.text import TextComponent\nfrom langflow.io import MultilineInput, Output\nfrom langflow.schema.message import Message\n\n\nclass TextOutputComponent(TextComponent):\n    display_name = \"Text Output\"\n    description = \"Display a text output in the Playground.\"\n    icon = \"type\"\n    name = \"TextOutput\"\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            info=\"Text to be passed as output.\",\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"text\", method=\"text_response\"),\n    ]\n\n    def text_response(self) -> Message:\n        message = Message(\n            text=self.input_value,\n        )\n        self.status = self.input_value\n        return message\n"
+              },
+              "input_value": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Text to be passed as output.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "TextOutput"
+        },
+        "dragging": false,
+        "id": "TextOutput-waNmh",
+        "measured": {
+          "height": 229,
+          "width": 320
+        },
+        "position": {
+          "x": 3859.8747749432705,
+          "y": 944.9561034504434
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "TextInput-6CCb9",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Get text inputs from the Playground.",
+            "display_name": "Text Input",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value"
+            ],
+            "frozen": false,
+            "icon": "type",
+            "legacy": false,
+            "lf_version": "1.3.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "text_response",
+                "name": "text",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.io.text import TextComponent\nfrom langflow.io import MultilineInput, Output\nfrom langflow.schema.message import Message\n\n\nclass TextInputComponent(TextComponent):\n    display_name = \"Text Input\"\n    description = \"Get text inputs from the Playground.\"\n    icon = \"type\"\n    name = \"TextInput\"\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            info=\"Text to be passed as input.\",\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"text\", method=\"text_response\"),\n    ]\n\n    def text_response(self) -> Message:\n        return Message(\n            text=self.input_value,\n        )\n"
+              },
+              "input_value": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Text to be passed as input.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "'#1  \\n[![Image 4: Fire TV Stick HD (Última geração) | Com controle remoto por voz com Alexa (inclui comandos de TV), controles de casa intelige](https://images-na.ssl-images-amazon.com/images/I/61qQCckVsqL._AC_UL600_SR600,400_.jpg)](https://www.amazon.com.br/fire-tv-stick-hd/dp/B0CQMT33WX/ref=zg_bs_g_electronics_d_sccl_1/137-8672304-5452621?psc=1)  \\n[Fire TV Stick HD (Última geração) | Com controle remoto por voz com Alexa (inclui comandos de TV), controles de casa inteligente e streaming em HD](https://www.amazon.com.br/fire-tv-stick-hd/dp/B0CQMT33WX/ref=zg_bs_g_electronics_d_sccl_1/137-8672304-5452621?psc=1)  \\n[_4,7 de 5 estrelas_ 6.671](https://www.amazon.com.br/product-reviews/B0CQMT33WX/ref=zg_bs_g_electronics_d_sccl_1_cr/137-8672304-5452621 \"4,7 de 5 estrelas, 6.671 classificações\")  \\n[R$ 369,00](https://www.amazon.com.br/fire-tv-stick-hd/dp/B0CQMT33WX/ref=zg_bs_g_electronics_d_sccl_1/137-8672304-5452621?psc=1)  \\n#2  \\n[![Image 5: Fone de ouvido sem fio TWS Philips TAT1209BK/00 na cor preto, com bluetooth, microfone, tecnologia IPX4 e 18 horas de reprodu](https://images-na.ssl-images-amazon.com/images/I/51yHf2TFfUL._AC_UL600_SR600,400_.jpg)](https://www.amazon.com.br/TAT1209BK-00-bluetooth-tecnologia-reprodu%C3%A7%C3%A3o/dp/B0CS3RHBZQ/ref=zg_bs_g_electronics_d_sccl_2/137-8672304-5452621?psc=1)  \\n[Fone de ouvido sem fio TWS Philips TAT1209BK/00 na cor preto, com bluetooth, microfone, tecnologia IPX4 e 18 horas de reprodução.](https://www.amazon.com.br/TAT1209BK-00-bluetooth-tecnologia-reprodu%C3%A7%C3%A3o/dp/B0CS3RHBZQ/ref=zg_bs_g_electronics_d_sccl_2/137-8672304-5452621?psc=1)  \\n[_4,6 de 5 estrelas_ 1.833](https://www.amazon.com.br/product-reviews/B0CS3RHBZQ/ref=zg_bs_g_electronics_d_sccl_2_cr/137-8672304-5452621 \"4,6 de 5 estrelas, 1.833 classificações\")  \\n[R$ 124,99](https://www.amazon.com.br/TAT1209BK-00-bluetooth-tecnologia-reprodu%C3%A7%C3%A3o/dp/B0CS3RHBZQ/ref=zg_bs_g_electronics_d_sccl_2/137-8672304-5452621?psc=1)  \\n#3  \\n[![Image 6: Smartphone Xiaomi Redmi Note 14 Midnight Black (Preto) 8GB RAM 256GB ROM](https://images-na.ssl-images-amazon.com/images/I/61+k2EbgHLL._AC_UL600_SR600,400_.jpg)](https://www.amazon.com.br/Smartphone-Xiaomi-Redmi-Midnight-Black/dp/B0DT5LHPMX/ref=zg_bs_g_electronics_d_sccl_3/137-8672304-5452621?psc=1)  \\n[Smartphone Xiaomi Redmi Note 14 Midnight Black (Preto) 8GB RAM 256GB ROM](https://www.amazon.com.br/Smartphone-Xiaomi-Redmi-Midnight-Black/dp/B0DT5LHPMX/ref=zg_bs_g_electronics_d_sccl_3/137-8672304-5452621?psc=1)  \\n[_4,8 de 5 estrelas_ 427](https://www.amazon.com.br/product-reviews/B0DT5LHPMX/ref=zg_bs_g_electronics_d_sccl_3_cr/137-8672304-5452621 \"4,8 de 5 estrelas, 427 classificações\")  \\n[R$ 1.224,90](https://www.amazon.com.br/Smartphone-Xiaomi-Redmi-Midnight-Black/dp/B0DT5LHPMX/ref=zg_bs_g_electronics_d_sccl_3/137-8672304-5452621?psc=1)  \\n#4  \\n[![Image 7: JBL, Fone de Ouvido On ear, Tune 520BT - Preto](https://images-na.ssl-images-amazon.com/images/I/51olNZRjn+L._AC_UL600_SR600,400_.jpg)](https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0C3V5X3QT/ref=zg_bs_g_electronics_d_sccl_4/137-8672304-5452621?psc=1)  \\n[JBL, Fone de Ouvido On ear, Tune 520BT - Preto](https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0C3V5X3QT/ref=zg_bs_g_electronics_d_sccl_4/137-8672304-5452621?psc=1)  \\n[_4,8 de 5 estrelas_ 9.260](https://www.amazon.com.br/product-reviews/B0C3V5X3QT/ref=zg_bs_g_electronics_d_sccl_4_cr/137-8672304-5452621 \"4,8 de 5 estrelas, 9.260 classificações\")  \\n[R$ 225,18](https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0C3V5X3QT/ref=zg_bs_g_electronics_d_sccl_4/137-8672304-5452621?psc=1)  \\n#5  \\n[![Image 20: Fone de Ouvido Philips com Microfone - Preto](https://images-na.ssl-images-amazon.com/images/I/51+W7A115SL._AC_UL300_SR300,200_.jpg)](https://www.amazon.com.br/Fones-Ouvido-Philips-com-Microfone/dp/B084S6BCJN/ref=zg_bs_g_electronics_d_sccl_5/137-8672304-5452621?psc=1)  \\n[Fone de Ouvido Philips com Microfone - Preto](https://www.amazon.com.br/Fones-Ouvido-Philips-com-Microfone/dp/B084S6BCJN/ref=zg_bs_g_electronics_d_sccl_5/137-8672304-5452621?psc=1)  \\n[_4,5 de 5 estrelas_ 27.016](https://www.amazon.com.br/product-reviews/B084S6BCJN/ref=zg_bs_g_electronics_d_sccl_5_cr/137-8672304-5452621 \"4,5 de 5 estrelas, 27.016 classificações\")  \\n[R$ 26,74](https://www.amazon.com.br/Fones-Ouvido-Philips-com-Microfone/dp/B084S6BCJN/ref=zg_bs_g_electronics_d_sccl_5/137-8672304-5452621?psc=1)  \\n#6  \\n[![Image 21: Smartphone Motorola Moto G24 8GB RAM Boost* 128GB Grafite](https://images-na.ssl-images-amazon.com/images/I/41S72MjGnVL._AC_UL300_SR300,200_.jpg)](https://www.amazon.com.br/Smartphone-Motorola-Boost-128GB-Grafite/dp/B0CTKWM7Z1/ref=zg_bs_g_electronics_d_sccl_6/137-8672304-5452621?psc=1)  \\n[Smartphone Motorola Moto G24 8GB RAM Boost* 128GB Grafite](https://www.amazon.com.br/Smartphone-Motorola-Boost-128GB-Grafite/dp/B0CTKWM7Z1/ref=zg_bs_g_electronics_d_sccl_6/137-8672304-5452621?psc=1)  \\n[_4,7 de 5 estrelas_ 3.657](https://www.amazon.com.br/product-reviews/B0CTKWM7Z1/ref=zg_bs_g_electronics_d_sccl_6_cr/137-8672304-5452621 \"4,7 de 5 estrelas, 3.657 classificações\")  \\n[R$ 721,00](https://www.amazon.com.br/Smartphone-Motorola-Boost-128GB-Grafite/dp/B0CTKWM7Z1/ref=zg_bs_g_electronics_d_sccl_6/137-8672304-5452621?psc=1)  \\n#7  \\n[![Image 22: Duracell Pilha Alcalina Aa Pequena Duracell Com 16 Unidades](https://images-na.ssl-images-amazon.com/images/I/719rU2goanL._AC_UL300_SR300,200_.jpg)](https://www.amazon.com.br/Pilha-Alcalina-Pequena-Duracell-3020720/dp/B0778VZYVV/ref=zg_bs_g_electronics_d_sccl_7/137-8672304-5452621?psc=1)  \\n[Duracell Pilha Alcalina Aa Pequena Duracell Com 16 Unidades](https://www.amazon.com.br/Pilha-Alcalina-Pequena-Duracell-3020720/dp/B0778VZYVV/ref=zg_bs_g_electronics_d_sccl_7/137-8672304-5452621?psc=1)  \\n[_4,8 de 5 estrelas_ 24.884](https://www.amazon.com.br/product-reviews/B0778VZYVV/ref=zg_bs_g_electronics_d_sccl_7_cr/137-8672304-5452621 \"4,8 de 5 estrelas, 24.884 classificações\")  \\n[R$ 77,17](https://www.amazon.com.br/Pilha-Alcalina-Pequena-Duracell-3020720/dp/B0778VZYVV/ref=zg_bs_g_electronics_d_sccl_7/137-8672304-5452621?psc=1)  \\n#8  \\n[![Image 23: Fujifilm Instax Mini - Filme Com 40 Fotos, Borda Branca, Foto Colorida](https://images-na.ssl-images-amazon.com/images/I/817ndC-0wcL._AC_UL300_SR300,200_.jpg)](https://www.amazon.com.br/Filme-Instax-Mini-Fotos-Fujifilm/dp/B07YP7X45R/ref=zg_bs_g_electronics_d_sccl_8/137-8672304-5452621?psc=1)  \\n[Fujifilm Instax Mini - Filme Com 40 Fotos, Borda Branca, Foto Colorida](https://www.amazon.com.br/Filme-Instax-Mini-Fotos-Fujifilm/dp/B07YP7X45R/ref=zg_bs_g_electronics_d_sccl_8/137-8672304-5452621?psc=1)  \\n[_4,8 de 5 estrelas_ 5.916](https://www.amazon.com.br/product-reviews/B07YP7X45R/ref=zg_bs_g_electronics_d_sccl_8_cr/137-8672304-5452621 \"4,8 de 5 estrelas, 5.916 classificações\")  \\n[R$ 195,00](https://www.amazon.com.br/Filme-Instax-Mini-Fotos-Fujifilm/dp/B07YP7X45R/ref=zg_bs_g_electronics_d_sccl_8/137-8672304-5452621?psc=1)  \\n#9  \\n[![Image 24: Echo Pop (Última geração) | Smart speaker compacto com som envolvente e Alexa | Cor Preta](https://images-na.ssl-images-amazon.com/images/I/61V5FRUgX8L._AC_UL300_SR300,200_.jpg)](https://www.amazon.com.br/Echo-Pop-Cor-Preta/dp/B09WXVH7WK/ref=zg_bs_g_electronics_d_sccl_9/137-8672304-5452621?psc=1)  \\n[Echo Pop (Última geração) | Smart speaker compacto com som envolvente e Alexa | Cor Preta](https://www.amazon.com.br/Echo-Pop-Cor-Preta/dp/B09WXVH7WK/ref=zg_bs_g_electronics_d_sccl_9/137-8672304-5452621?psc=1)  \\n[_4,8 de 5 estrelas_ 60.813](https://www.amazon.com.br/product-reviews/B09WXVH7WK/ref=zg_bs_g_electronics_d_sccl_9_cr/137-8672304-5452621 \"4,8 de 5 estrelas, 60.813 classificações\")  \\n[R$ 379,00](https://www.amazon.com.br/Echo-Pop-Cor-Preta/dp/B09WXVH7WK/ref=zg_bs_g_electronics_d_sccl_9/137-8672304-5452621?psc=1)  \\n#10  \\n[![Image 25: Pilha Alcalina AAA com 16 unidades Elgin Palito](https://images-na.ssl-images-amazon.com/images/I/517itypmYaL._AC_UL300_SR300,200_.jpg)](https://www.amazon.com.br/Pilha-Alcalina-unidades-Elgin-Palito/dp/B0BSVN58JW/ref=zg_bs_g_electronics_d_sccl_10/137-8672304-5452621?psc=1)  \\n[Pilha Alcalina AAA com 16 unidades Elgin Palito](https://www.amazon.com.br/Pilha-Alcalina-unidades-Elgin-Palito/dp/B0BSVN58JW/ref=zg_bs_g_electronics_d_sccl_10/137-8672304-5452621?psc=1)  \\n[_4,7 de 5 estrelas_ 5.367](https://www.amazon.com.br/product-reviews/B0BSVN58JW/ref=zg_bs_g_electronics_d_sccl_10_cr/137-8672304-5452621 \"4,7 de 5 estrelas, 5.367 classificações\")  \\n[R$ 34,51](https://www.amazon.com.br/Pilha-Alcalina-unidades-Elgin-Palito/dp/B0BSVN58JW/ref=zg_bs_g_electronics_d_sccl_10/137-8672304-5452621?psc=1)'"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "TextInput"
+        },
+        "dragging": false,
+        "id": "TextInput-6CCb9",
+        "measured": {
+          "height": 229,
+          "width": 320
+        },
+        "position": {
+          "x": 2209.9377357058665,
+          "y": 656.175435582451
+        },
+        "selected": false,
+        "type": "genericNode"
+      }
+    ],
+    "viewport": {
+      "x": -1235.765973453969,
+      "y": -187.99338533140673,
+      "zoom": 0.6584959632423754
+    }
+  },
+  "description": "",
+  "endpoint_name": "formatador_dados_amazon",
+  "folder_id": "cd7a813b-70e4-4f9b-807a-06f4e7b9f0be",
+  "fs_path": null,
+  "gradient": null,
+  "icon": null,
+  "icon_bg_color": null,
+  "id": "96c06e73-9a8a-42f7-b4a5-cc62291ecc46",
+  "is_component": false,
+  "locked": false,
+  "name": "Formatador de Dados da Amazon",
+  "tags": [],
+  "updated_at": "2025-04-11T04:26:49+00:00",
+  "user_id": "dcdbd6eb-34c9-442b-9d6a-cc41312812b7",
+  "webhook": false
+}

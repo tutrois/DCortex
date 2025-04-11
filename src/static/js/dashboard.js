@@ -162,9 +162,11 @@ function updateProgress() {
             loadingStatus.textContent = "Conectando ao serviço de dados...";
         } else if (progress < 40) {
             loadingStatus.textContent = "Coletando informações da Amazon...";
-        } else if (progress < 60) {
+        } else if (progress < 50) {
             loadingStatus.textContent = "Processando dados com ColetorDadosAmazon...";
-        } else if (progress < 80) {
+        } else if (progress < 70) {
+            loadingStatus.textContent = "Formatando dados dos produtos...";
+        } else if (progress < 85) {
             loadingStatus.textContent = "Analisando preços e avaliações...";
         } else {
             loadingStatus.textContent = "Preparando visualização...";
@@ -563,9 +565,12 @@ async function fetchDataFromAPI(customUrl) {
         console.log('Usando URL padrão (nenhuma URL personalizada fornecida)');
     }
 
-    // Adiciona um timestamp para evitar cache
+    // Adiciona o parâmetro formatter para usar o novo agente de formatação
     apiUrl += apiUrl.includes('?') ? '&' : '?';
-    apiUrl += `_t=${Date.now()}`;
+    apiUrl += 'formatter=coletor_dados_amazon_formatter';
+
+    // Adiciona um timestamp para evitar cache
+    apiUrl += `&_t=${Date.now()}`;
 
     console.log(`URL final da API: ${apiUrl}`);
 

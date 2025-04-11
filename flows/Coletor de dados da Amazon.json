@@ -7,118 +7,6 @@
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "OpenAIModel",
-            "id": "OpenAIModel-eM0mB",
-            "name": "model_output",
-            "output_types": [
-              "LanguageModel"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "llm",
-            "id": "CrewAIAgentComponent-0LIf5",
-            "inputTypes": [
-              "LanguageModel"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "reactflow__edge-OpenAIModel-eM0mB{œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-eM0mBœ,œnameœ:œmodel_outputœ,œoutput_typesœ:[œLanguageModelœ]}-CrewAIAgentComponent-0LIf5{œfieldNameœ:œllmœ,œidœ:œCrewAIAgentComponent-0LIf5œ,œinputTypesœ:[œLanguageModelœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "OpenAIModel-eM0mB",
-        "sourceHandle": "{œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-eM0mBœ,œnameœ:œmodel_outputœ,œoutput_typesœ:[œLanguageModelœ]}",
-        "target": "CrewAIAgentComponent-0LIf5",
-        "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œCrewAIAgentComponent-0LIf5œ,œinputTypesœ:[œLanguageModelœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "CrewAIAgentComponent",
-            "id": "CrewAIAgentComponent-0LIf5",
-            "name": "output",
-            "output_types": [
-              "Agent"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "agent",
-            "id": "SequentialTaskComponent-BF7wi",
-            "inputTypes": [
-              "Agent"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "reactflow__edge-CrewAIAgentComponent-0LIf5{œdataTypeœ:œCrewAIAgentComponentœ,œidœ:œCrewAIAgentComponent-0LIf5œ,œnameœ:œoutputœ,œoutput_typesœ:[œAgentœ]}-SequentialTaskComponent-BF7wi{œfieldNameœ:œagentœ,œidœ:œSequentialTaskComponent-BF7wiœ,œinputTypesœ:[œAgentœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "CrewAIAgentComponent-0LIf5",
-        "sourceHandle": "{œdataTypeœ:œCrewAIAgentComponentœ,œidœ:œCrewAIAgentComponent-0LIf5œ,œnameœ:œoutputœ,œoutput_typesœ:[œAgentœ]}",
-        "target": "SequentialTaskComponent-BF7wi",
-        "targetHandle": "{œfieldNameœ:œagentœ,œidœ:œSequentialTaskComponent-BF7wiœ,œinputTypesœ:[œAgentœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "SequentialTaskComponent",
-            "id": "SequentialTaskComponent-BF7wi",
-            "name": "task_output",
-            "output_types": [
-              "SequentialTask"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "tasks",
-            "id": "SequentialCrewComponent-HECd5",
-            "inputTypes": [
-              "SequentialTask"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "reactflow__edge-SequentialTaskComponent-BF7wi{œdataTypeœ:œSequentialTaskComponentœ,œidœ:œSequentialTaskComponent-BF7wiœ,œnameœ:œtask_outputœ,œoutput_typesœ:[œSequentialTaskœ]}-SequentialCrewComponent-HECd5{œfieldNameœ:œtasksœ,œidœ:œSequentialCrewComponent-HECd5œ,œinputTypesœ:[œSequentialTaskœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "SequentialTaskComponent-BF7wi",
-        "sourceHandle": "{œdataTypeœ:œSequentialTaskComponentœ,œidœ:œSequentialTaskComponent-BF7wiœ,œnameœ:œtask_outputœ,œoutput_typesœ:[œSequentialTaskœ]}",
-        "target": "SequentialCrewComponent-HECd5",
-        "targetHandle": "{œfieldNameœ:œtasksœ,œidœ:œSequentialCrewComponent-HECd5œ,œinputTypesœ:[œSequentialTaskœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "SequentialCrewComponent",
-            "id": "SequentialCrewComponent-HECd5",
-            "name": "output",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "input_value",
-            "id": "TextOutput-gwADF",
-            "inputTypes": [
-              "Message"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "reactflow__edge-SequentialCrewComponent-HECd5{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-HECd5œ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}-TextOutput-gwADF{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-gwADFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "SequentialCrewComponent-HECd5",
-        "sourceHandle": "{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-HECd5œ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "TextOutput-gwADF",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-gwADFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
             "dataType": "URLComponent",
             "id": "URLComponent-aKcLy",
             "name": "dataframe",
@@ -232,34 +120,6 @@
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "SequentialCrewComponent",
-            "id": "SequentialCrewComponent-NoPyL",
-            "name": "output",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "goal",
-            "id": "CrewAIAgentComponent-0LIf5",
-            "inputTypes": [
-              "Message"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "reactflow__edge-SequentialCrewComponent-NoPyL{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-NoPyLœ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}-CrewAIAgentComponent-0LIf5{œfieldNameœ:œgoalœ,œidœ:œCrewAIAgentComponent-0LIf5œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "SequentialCrewComponent-NoPyL",
-        "sourceHandle": "{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-NoPyLœ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "CrewAIAgentComponent-0LIf5",
-        "targetHandle": "{œfieldNameœ:œgoalœ,œidœ:œCrewAIAgentComponent-0LIf5œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
             "dataType": "OpenAIModel",
             "id": "OpenAIModel-eM0mB",
             "name": "model_output",
@@ -338,6 +198,34 @@
         "sourceHandle": "{œdataTypeœ:œTextInputœ,œidœ:œTextInput-2IbkGœ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}",
         "target": "URLComponent-aKcLy",
         "targetHandle": "{œfieldNameœ:œurlsœ,œidœ:œURLComponent-aKcLyœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "SequentialCrewComponent",
+            "id": "SequentialCrewComponent-NoPyL",
+            "name": "output",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "TextOutput-gwADF",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__SequentialCrewComponent-NoPyL{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-NoPyLœ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}-TextOutput-gwADF{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-gwADFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "SequentialCrewComponent-NoPyL",
+        "sourceHandle": "{œdataTypeœ:œSequentialCrewComponentœ,œidœ:œSequentialCrewComponent-NoPyLœ,œnameœ:œoutputœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "TextOutput-gwADF",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-gwADFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       }
     ],
     "nodes": [
@@ -1298,736 +1186,6 @@
       },
       {
         "data": {
-          "id": "CrewAIAgentComponent-0LIf5",
-          "node": {
-            "base_classes": [
-              "Agent"
-            ],
-            "beta": false,
-            "category": "crewai",
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Represents an agent of CrewAI.",
-            "display_name": "CrewAI Agent",
-            "documentation": "https://docs.crewai.com/how-to/LLM-Connections/",
-            "edited": false,
-            "field_order": [
-              "role",
-              "goal",
-              "backstory",
-              "tools",
-              "llm",
-              "memory",
-              "verbose",
-              "allow_delegation",
-              "allow_code_execution",
-              "kwargs"
-            ],
-            "frozen": false,
-            "icon": "CrewAI",
-            "key": "CrewAIAgentComponent",
-            "legacy": false,
-            "lf_version": "1.3.2",
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Agent",
-                "method": "build_output",
-                "name": "output",
-                "selected": "Agent",
-                "tool_mode": true,
-                "types": [
-                  "Agent"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "score": 0.000007568328950209746,
-            "template": {
-              "_type": "Component",
-              "allow_code_execution": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Allow Code Execution",
-                "dynamic": false,
-                "info": "Whether the agent is allowed to execute code.",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "allow_code_execution",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": false
-              },
-              "allow_delegation": {
-                "_input_type": "BoolInput",
-                "advanced": false,
-                "display_name": "Allow Delegation",
-                "dynamic": false,
-                "info": "Whether the agent is allowed to delegate tasks to other agents.",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "allow_delegation",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": true
-              },
-              "backstory": {
-                "_input_type": "MultilineInput",
-                "advanced": false,
-                "copy_field": false,
-                "display_name": "Backstory",
-                "dynamic": false,
-                "info": "The backstory of the agent.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "multiline": true,
-                "name": "backstory",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": "Você é um especialista em estruturas de dados e seu papel é pegar informações limpas extraídas de um scraping da Amazon e organizá-las em formato JSON, com chaves padronizadas.\n\nCampos esperados por produto:\n- nome\n- preco\n- avaliacao\n- imagem\n- posicao\n-url produto\n\n⚠️ Caso alguma informação esteja ausente, omita-a do JSON. Retorne uma lista com todos os produtos encontrados."
-              },
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from crewai import Agent\n\nfrom langflow.base.agents.crewai.crew import convert_llm, convert_tools\nfrom langflow.custom import Component\nfrom langflow.io import BoolInput, DictInput, HandleInput, MultilineInput, Output\n\n\nclass CrewAIAgentComponent(Component):\n    \"\"\"Component for creating a CrewAI agent.\n\n    This component allows you to create a CrewAI agent with the specified role, goal, backstory, tools,\n    and language model.\n\n    Args:\n        Component (Component): Base class for all components.\n\n    Returns:\n        Agent: CrewAI agent.\n    \"\"\"\n\n    display_name = \"CrewAI Agent\"\n    description = \"Represents an agent of CrewAI.\"\n    documentation: str = \"https://docs.crewai.com/how-to/LLM-Connections/\"\n    icon = \"CrewAI\"\n\n    inputs = [\n        MultilineInput(name=\"role\", display_name=\"Role\", info=\"The role of the agent.\"),\n        MultilineInput(name=\"goal\", display_name=\"Goal\", info=\"The objective of the agent.\"),\n        MultilineInput(name=\"backstory\", display_name=\"Backstory\", info=\"The backstory of the agent.\"),\n        HandleInput(\n            name=\"tools\",\n            display_name=\"Tools\",\n            input_types=[\"Tool\"],\n            is_list=True,\n            info=\"Tools at agents disposal\",\n            value=[],\n        ),\n        HandleInput(\n            name=\"llm\",\n            display_name=\"Language Model\",\n            info=\"Language model that will run the agent.\",\n            input_types=[\"LanguageModel\"],\n        ),\n        BoolInput(\n            name=\"memory\",\n            display_name=\"Memory\",\n            info=\"Whether the agent should have memory or not\",\n            advanced=True,\n            value=True,\n        ),\n        BoolInput(\n            name=\"verbose\",\n            display_name=\"Verbose\",\n            advanced=True,\n            value=False,\n        ),\n        BoolInput(\n            name=\"allow_delegation\",\n            display_name=\"Allow Delegation\",\n            info=\"Whether the agent is allowed to delegate tasks to other agents.\",\n            value=True,\n        ),\n        BoolInput(\n            name=\"allow_code_execution\",\n            display_name=\"Allow Code Execution\",\n            info=\"Whether the agent is allowed to execute code.\",\n            value=False,\n            advanced=True,\n        ),\n        DictInput(\n            name=\"kwargs\",\n            display_name=\"kwargs\",\n            info=\"kwargs of agent.\",\n            is_list=True,\n            advanced=True,\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Agent\", name=\"output\", method=\"build_output\"),\n    ]\n\n    def build_output(self) -> Agent:\n        kwargs = self.kwargs or {}\n\n        # Define the Agent\n        agent = Agent(\n            role=self.role,\n            goal=self.goal,\n            backstory=self.backstory,\n            llm=convert_llm(self.llm),\n            verbose=self.verbose,\n            memory=self.memory,\n            tools=convert_tools(self.tools),\n            allow_delegation=self.allow_delegation,\n            allow_code_execution=self.allow_code_execution,\n            **kwargs,\n        )\n\n        self.status = repr(agent)\n\n        return agent\n"
-              },
-              "goal": {
-                "_input_type": "MultilineInput",
-                "advanced": false,
-                "copy_field": false,
-                "display_name": "Goal",
-                "dynamic": false,
-                "info": "The objective of the agent.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "multiline": true,
-                "name": "goal",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "kwargs": {
-                "_input_type": "DictInput",
-                "advanced": true,
-                "display_name": "kwargs",
-                "dynamic": false,
-                "info": "kwargs of agent.",
-                "list": true,
-                "list_add_label": "Add More",
-                "name": "kwargs",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "type": "dict",
-                "value": {}
-              },
-              "llm": {
-                "_input_type": "HandleInput",
-                "advanced": false,
-                "display_name": "Language Model",
-                "dynamic": false,
-                "info": "Language model that will run the agent.",
-                "input_types": [
-                  "LanguageModel"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "llm",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": ""
-              },
-              "memory": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Memory",
-                "dynamic": false,
-                "info": "Whether the agent should have memory or not",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "memory",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": true
-              },
-              "role": {
-                "_input_type": "MultilineInput",
-                "advanced": false,
-                "copy_field": false,
-                "display_name": "Role",
-                "dynamic": false,
-                "info": "The role of the agent.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "multiline": true,
-                "name": "role",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": "Formatador de Dados da Amazon"
-              },
-              "tools": {
-                "_input_type": "HandleInput",
-                "advanced": false,
-                "display_name": "Tools",
-                "dynamic": false,
-                "info": "Tools at agents disposal",
-                "input_types": [
-                  "Tool"
-                ],
-                "list": true,
-                "list_add_label": "Add More",
-                "name": "tools",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": []
-              },
-              "verbose": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Verbose",
-                "dynamic": false,
-                "info": "",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "verbose",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": false
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "CrewAIAgentComponent"
-        },
-        "dragging": false,
-        "id": "CrewAIAgentComponent-0LIf5",
-        "measured": {
-          "height": 523,
-          "width": 320
-        },
-        "position": {
-          "x": 2983.4931984547043,
-          "y": 767.8515642259009
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
-          "id": "SequentialTaskComponent-BF7wi",
-          "node": {
-            "base_classes": [
-              "SequentialTask"
-            ],
-            "beta": false,
-            "category": "crewai",
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Each task must have a description, an expected output and an agent responsible for execution.",
-            "display_name": "Sequential Task",
-            "documentation": "",
-            "edited": false,
-            "field_order": [
-              "task_description",
-              "expected_output",
-              "tools",
-              "agent",
-              "task",
-              "async_execution"
-            ],
-            "frozen": false,
-            "icon": "CrewAI",
-            "key": "SequentialTaskComponent",
-            "legacy": false,
-            "lf_version": "1.3.2",
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Task",
-                "method": "build_task",
-                "name": "task_output",
-                "selected": "SequentialTask",
-                "tool_mode": true,
-                "types": [
-                  "SequentialTask"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "score": 0.001,
-            "template": {
-              "_type": "Component",
-              "agent": {
-                "_input_type": "HandleInput",
-                "advanced": false,
-                "display_name": "Agent",
-                "dynamic": false,
-                "info": "CrewAI Agent that will perform the task",
-                "input_types": [
-                  "Agent"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "agent",
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": ""
-              },
-              "async_execution": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Async Execution",
-                "dynamic": false,
-                "info": "Boolean flag indicating asynchronous task execution.",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "async_execution",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": true
-              },
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from langflow.base.agents.crewai.tasks import SequentialTask\nfrom langflow.custom import Component\nfrom langflow.io import BoolInput, HandleInput, MultilineInput, Output\n\n\nclass SequentialTaskComponent(Component):\n    display_name: str = \"Sequential Task\"\n    description: str = \"Each task must have a description, an expected output and an agent responsible for execution.\"\n    icon = \"CrewAI\"\n    inputs = [\n        MultilineInput(\n            name=\"task_description\",\n            display_name=\"Description\",\n            info=\"Descriptive text detailing task's purpose and execution.\",\n        ),\n        MultilineInput(\n            name=\"expected_output\",\n            display_name=\"Expected Output\",\n            info=\"Clear definition of expected task outcome.\",\n        ),\n        HandleInput(\n            name=\"tools\",\n            display_name=\"Tools\",\n            input_types=[\"Tool\"],\n            is_list=True,\n            info=\"List of tools/resources limited for task execution. Uses the Agent tools by default.\",\n            required=False,\n            advanced=True,\n        ),\n        HandleInput(\n            name=\"agent\",\n            display_name=\"Agent\",\n            input_types=[\"Agent\"],\n            info=\"CrewAI Agent that will perform the task\",\n            required=True,\n        ),\n        HandleInput(\n            name=\"task\",\n            display_name=\"Task\",\n            input_types=[\"SequentialTask\"],\n            info=\"CrewAI Task that will perform the task\",\n        ),\n        BoolInput(\n            name=\"async_execution\",\n            display_name=\"Async Execution\",\n            value=True,\n            advanced=True,\n            info=\"Boolean flag indicating asynchronous task execution.\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Task\", name=\"task_output\", method=\"build_task\"),\n    ]\n\n    def build_task(self) -> list[SequentialTask]:\n        tasks: list[SequentialTask] = []\n        task = SequentialTask(\n            description=self.task_description,\n            expected_output=self.expected_output,\n            tools=self.agent.tools,\n            async_execution=False,\n            agent=self.agent,\n        )\n        tasks.append(task)\n        self.status = task\n        if self.task:\n            if isinstance(self.task, list) and all(isinstance(task, SequentialTask) for task in self.task):\n                tasks = self.task + tasks\n            elif isinstance(self.task, SequentialTask):\n                tasks = [self.task, *tasks]\n        return tasks\n"
-              },
-              "expected_output": {
-                "_input_type": "MultilineInput",
-                "advanced": false,
-                "copy_field": false,
-                "display_name": "Expected Output",
-                "dynamic": false,
-                "info": "Clear definition of expected task outcome.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "multiline": true,
-                "name": "expected_output",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": "Lista JSON dos produtos com os campos nome, preco, avaliacao, imagem, posicao\n\n⚠️ Regras:\n- **NÃO** inclua produtos patrocinados ou anúncios.\n- **NÃO** invente dados. Se nenhum produto for encontrado, retorne um JSON com: {\"error\": \"Nenhum produto encontrado.\"}\n- Retorne **apenas** produtos orgânicos reais exibidos na página.\n\n📦 Para cada produto, colete os seguintes dados:\n- posição: número inteiro indicando a posição no ranking\n- imagem: URL da imagem do produto\n- título: nome/título completo do produto\n- preço: valor em reais (float), sem símbolo, ex: 199.90\n- rating: média da avaliação (float), se disponível\n-url produto: URL do produto, a URL fica logo após o titulo do produto\n\n✅ Formato de resposta (JSON limpo):\nUma lista JSON com objetos seguindo este padrão:\n\n[\n  {\n    \"posicao\": 1,\n    \"imagem\": \"https://link-da-imagem.com\",\n    \"titulo\": \"Nome do Produto\",\n    \"preco\": 199.99,\n    \"rating\": 4.7,\n    \"url_produto\": \"https://link-do-produto.com\"\n  },\n  ...\n]\n\n📌 Instruções finais:\n- Retorne **apenas** a string JSON.\n- **Não** inclua `json`, texto explicativo ou marcações de código.\n- remover todo tipo de ruído como ```` e retornar apenas o json.\n\"\"\"\n"
-              },
-              "task": {
-                "_input_type": "HandleInput",
-                "advanced": false,
-                "display_name": "Task",
-                "dynamic": false,
-                "info": "CrewAI Task that will perform the task",
-                "input_types": [
-                  "SequentialTask"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "task",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": ""
-              },
-              "task_description": {
-                "_input_type": "MultilineInput",
-                "advanced": false,
-                "copy_field": false,
-                "display_name": "Description",
-                "dynamic": false,
-                "info": "Descriptive text detailing task's purpose and execution.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "multiline": true,
-                "name": "task_description",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": "\tFormatar os dados limpos dos produtos em uma estrutura JSON"
-              },
-              "tools": {
-                "_input_type": "HandleInput",
-                "advanced": true,
-                "display_name": "Tools",
-                "dynamic": false,
-                "info": "List of tools/resources limited for task execution. Uses the Agent tools by default.",
-                "input_types": [
-                  "Tool"
-                ],
-                "list": true,
-                "list_add_label": "Add More",
-                "name": "tools",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": ""
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "SequentialTaskComponent"
-        },
-        "dragging": false,
-        "id": "SequentialTaskComponent-BF7wi",
-        "measured": {
-          "height": 439,
-          "width": 320
-        },
-        "position": {
-          "x": 3358.863779377078,
-          "y": 853.3272463673214
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
-          "id": "SequentialCrewComponent-HECd5",
-          "node": {
-            "base_classes": [
-              "Message"
-            ],
-            "beta": false,
-            "category": "crewai",
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Represents a group of agents with tasks that are executed sequentially.",
-            "display_name": "Sequential Crew",
-            "documentation": "https://docs.crewai.com/how-to/Sequential/",
-            "edited": false,
-            "field_order": [
-              "verbose",
-              "memory",
-              "use_cache",
-              "max_rpm",
-              "share_crew",
-              "function_calling_llm",
-              "tasks"
-            ],
-            "frozen": false,
-            "icon": "CrewAI",
-            "key": "SequentialCrewComponent",
-            "legacy": false,
-            "lf_version": "1.3.2",
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Output",
-                "method": "build_output",
-                "name": "output",
-                "required_inputs": [],
-                "selected": "Message",
-                "tool_mode": true,
-                "types": [
-                  "Message"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "score": 0.00021002192191843841,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from crewai import Agent, Crew, Process, Task\n\nfrom langflow.base.agents.crewai.crew import BaseCrewComponent\nfrom langflow.io import HandleInput\nfrom langflow.schema.message import Message\n\n\nclass SequentialCrewComponent(BaseCrewComponent):\n    display_name: str = \"Sequential Crew\"\n    description: str = \"Represents a group of agents with tasks that are executed sequentially.\"\n    documentation: str = \"https://docs.crewai.com/how-to/Sequential/\"\n    icon = \"CrewAI\"\n\n    inputs = [\n        *BaseCrewComponent._base_inputs,\n        HandleInput(name=\"tasks\", display_name=\"Tasks\", input_types=[\"SequentialTask\"], is_list=True),\n    ]\n\n    @property\n    def agents(self: \"SequentialCrewComponent\") -> list[Agent]:\n        # Derive agents directly from linked tasks\n        return [task.agent for task in self.tasks if hasattr(task, \"agent\")]\n\n    def get_tasks_and_agents(self, agents_list=None) -> tuple[list[Task], list[Agent]]:\n        # Use the agents property to derive agents\n        if not agents_list:\n            existing_agents = self.agents\n            agents_list = existing_agents + (agents_list or [])\n\n        return super().get_tasks_and_agents(agents_list=agents_list)\n\n    def build_crew(self) -> Message:\n        tasks, agents = self.get_tasks_and_agents()\n\n        return Crew(\n            agents=agents,\n            tasks=tasks,\n            process=Process.sequential,\n            verbose=self.verbose,\n            memory=self.memory,\n            cache=self.use_cache,\n            max_rpm=self.max_rpm,\n            share_crew=self.share_crew,\n            function_calling_llm=self.function_calling_llm,\n            step_callback=self.get_step_callback(),\n            task_callback=self.get_task_callback(),\n        )\n"
-              },
-              "function_calling_llm": {
-                "_input_type": "HandleInput",
-                "advanced": true,
-                "display_name": "Function Calling LLM",
-                "dynamic": false,
-                "info": "Turns the ReAct CrewAI agent into a function-calling agent",
-                "input_types": [
-                  "LanguageModel"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "function_calling_llm",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": ""
-              },
-              "max_rpm": {
-                "_input_type": "IntInput",
-                "advanced": true,
-                "display_name": "Max RPM",
-                "dynamic": false,
-                "info": "",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "max_rpm",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "int",
-                "value": 100
-              },
-              "memory": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Memory",
-                "dynamic": false,
-                "info": "",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "memory",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": false
-              },
-              "share_crew": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Share Crew",
-                "dynamic": false,
-                "info": "",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "share_crew",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": false
-              },
-              "tasks": {
-                "_input_type": "HandleInput",
-                "advanced": false,
-                "display_name": "Tasks",
-                "dynamic": false,
-                "info": "",
-                "input_types": [
-                  "SequentialTask"
-                ],
-                "list": true,
-                "list_add_label": "Add More",
-                "name": "tasks",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "trace_as_metadata": true,
-                "type": "other",
-                "value": ""
-              },
-              "use_cache": {
-                "_input_type": "BoolInput",
-                "advanced": true,
-                "display_name": "Cache",
-                "dynamic": false,
-                "info": "",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "use_cache",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "bool",
-                "value": true
-              },
-              "verbose": {
-                "_input_type": "IntInput",
-                "advanced": true,
-                "display_name": "Verbose",
-                "dynamic": false,
-                "info": "",
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "verbose",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "int",
-                "value": 0
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "SequentialCrewComponent"
-        },
-        "dragging": false,
-        "id": "SequentialCrewComponent-HECd5",
-        "measured": {
-          "height": 211,
-          "width": 320
-        },
-        "position": {
-          "x": 3724.527048123322,
-          "y": 1075.733126578509
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
           "id": "TextOutput-gwADF",
           "node": {
             "base_classes": [
@@ -2124,10 +1282,10 @@
           "width": 320
         },
         "position": {
-          "x": 4085.4811210411353,
-          "y": 1054.8442079318586
+          "x": 2550.479858975088,
+          "y": 425.2410059350027
         },
-        "selected": false,
+        "selected": true,
         "type": "genericNode"
       },
       {
@@ -2854,8 +2012,8 @@
           "width": 320
         },
         "position": {
-          "x": 2189.6358988147053,
-          "y": 387.8795227108932
+          "x": 2185.0826905488775,
+          "y": 439.4825497236087
         },
         "selected": false,
         "type": "genericNode"
@@ -2943,7 +2101,7 @@
                 "trace_as_input": true,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": "https://r.jina.ai/https://www.amazon.com.br/gp/new-releases/electronics/ref=zg_bsnr_electronics_sm"
+                "value": "https://r.jina.ai/https://www.amazon.com.br/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0"
               }
             },
             "tool_mode": false
@@ -2966,9 +2124,9 @@
       }
     ],
     "viewport": {
-      "x": 110.83905817449204,
-      "y": 12.55853149761083,
-      "zoom": 0.48154926078990495
+      "x": 381.4436777883608,
+      "y": 133.72891306270742,
+      "zoom": 0.498529795755134
     }
   },
   "description": "Language Models, Unleashed.",
@@ -2983,7 +2141,7 @@
   "locked": false,
   "name": "Coletor de dados da Amazon",
   "tags": [],
-  "updated_at": "2025-04-10T22:47:59+00:00",
+  "updated_at": "2025-04-11T02:37:39+00:00",
   "user_id": "dcdbd6eb-34c9-442b-9d6a-cc41312812b7",
   "webhook": false
 }

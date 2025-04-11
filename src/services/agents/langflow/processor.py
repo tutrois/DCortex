@@ -80,16 +80,11 @@ class LangflowProcessorAgent(BaseDataProcessorAgent):
                     results = outputs["outputs"][0]
                     if "results" in results and "text" in results["results"]:
                         text_data = results["results"]["text"]
-                        if "data" in text_data and "text" in text_data["data"]:
-                            # Agora sim, temos a lista de produtos
-                            produtos = json.loads(text_data["data"]["text"])
-                            
-                            # Verifica se produtos é uma lista
-                            if not isinstance(produtos, list):
-                                logger.error("Formato de dados inválido: não é uma lista")
-                                return None
-                            
-                            return produtos
+
+                        # Agora sim, temos a lista de produtos
+                        produtos = text_data["text"]
+                        
+                        return produtos
             
             logger.error("Estrutura da resposta não é a esperada")
             return None
