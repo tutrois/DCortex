@@ -29,7 +29,7 @@ class Config:
     # URL padrão para scraping
     DEFAULT_SCRAPE_URL = os.getenv(
         'DEFAULT_SCRAPE_URL', 
-        'https://www.amazon.com.br/gp/new-releases/electronics/ref=zg_bsnr_electronics_sm'
+        'https://www.amazon.com.br/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0'
     )
 
 class DevelopmentConfig(Config):
