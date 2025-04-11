@@ -93,14 +93,14 @@ function updateAmazonLink(url, text) {
     if (text) {
         // Extrai apenas o nome da categoria (remove os ícones)
         const categoryName = text.replace(/[^a-zA-Z0-9À-ÿ\s]/g, '').trim();
-        openAmazonLink.innerHTML = `<i class="bi bi-box-arrow-up-right me-2"></i>Abrir ${categoryName} na Amazon`;
+        openAmazonLink.innerHTML = `<i class="bi bi-box-arrow-up-right me-1"></i>Abrir ${categoryName} na Amazon`;
     }
 
     // Adiciona uma animação para destacar a mudança
     openAmazonLink.classList.add('pulse');
     setTimeout(() => {
         openAmazonLink.classList.remove('pulse');
-    }, 1000);
+    }, 800);
 }
 
 /**
